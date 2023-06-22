@@ -15,12 +15,15 @@ body{
 
 /* <!-- =============================== * navbar * ============================================ --> */
 
-.hedder{
-    background-color: #aed5d2;
-    box-shadow: 0 0 2px grey;
-    position: sticky;
-    top: 0%;
-   z-index: 5;
+.search-container{
+    align-self: center;
+    padding:  auto 0 0 20;
+    border-radius: 10px 10px 10px 10px;
+}
+.login{
+    text-align:right;
+    padding: 30px;
+    ;
 }
 .navbar{
     display: flex;
@@ -68,7 +71,7 @@ body{
 }
 .option_box{
     box-shadow: 0 0 10px grey;
-    background-color: white; 
+    background-color:  #aed5d2;; 
     display: none;
     position: absolute;
     top: 60px;
@@ -85,21 +88,15 @@ body{
 
 .search_box{
     display: flex;
+    border-radius: 20px 20px 20px 20px;
 }
-.search_box i{
-    background-color: black;
-    color: white;
-    padding: 14px;
-    font-size: 15px;
-    border-radius: 0 6px 6px 0;
-    cursor: pointer;
-}
+ 
 .searchclass{
     padding: 10px;
     width: 400px;
     font-size: 15px;
     border: 2px solid black;
-    border-radius: 6px 0 0 6px;
+    border-radius: 10px 10px 10px 10px;
 }
 
 
@@ -244,18 +241,18 @@ body{
 
 
 
-.descriptiopn{
+.description{
  padding-left: 20px;
  border: 1px solid rgb(179,178,178);
  border-radius: 5px;
  background-color:#aed5d2;
  padding-bottom: 15px;
 }
-.descriptiopn h3{
+.description h3{
  padding: 10px 10px 10px 0;
  font-size: 20px;
 }
-.descriptiopn p{
+.description p{
     line-height: 20px;
     color: rgb(51,51,51);
 }
