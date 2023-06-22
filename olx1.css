@@ -8,7 +8,9 @@
 
 
 /* <!-- =============================== * navbar * ============================================ --> */
-
+body{
+    background-color: #AED5D2;
+}
 .hedder{
     background-color: #f7f8f9;
     box-shadow: 0 0 2px grey;
