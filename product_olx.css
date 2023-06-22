@@ -8,7 +8,7 @@
 
 
 body{
-    background-color: #f2f4f5;
+    background-color: #aed5d2;
 }
 
 
@@ -16,7 +16,7 @@ body{
 /* <!-- =============================== * navbar * ============================================ --> */
 
 .hedder{
-    background-color: #f7f8f9;
+    background-color: #aed5d2;
     box-shadow: 0 0 2px grey;
     position: sticky;
     top: 0%;
@@ -24,8 +24,9 @@ body{
 }
 .navbar{
     display: flex;
-    align-items: center;
+    align-items:start;
     width: 1300px;
+    opacity: 63%;
     margin: auto;
 }
 
@@ -34,11 +35,6 @@ body{
 }
 
 
-
-.contry_select{
-    width: 250px;
-    margin-left: 70px;
-}
 .select i{
     font-size: 15px;
     transition: all 0.3s;
@@ -89,7 +85,6 @@ body{
 
 .search_box{
     display: flex;
-    margin-left: 30px;
 }
 .search_box i{
     background-color: black;
@@ -147,14 +142,6 @@ body{
 }
 
 
-
-
-.girl_img img{
-    width: 55px;
-    border-radius: 50%;
-    cursor: pointer;
-    margin-left: 55px;
-}
 .nameandimg img{
     width: 65px;
     border-radius: 50%;
@@ -221,32 +208,6 @@ body{
 
 
 
-/* <!-- =============================== * ad 1 * ============================================ --> */
-
-
-
-.ads_img2{
-    width: 800px;
-    margin: auto;
-    margin-top: 35px;
-    height: 200px;
-    position: relative;
-}
-.ads_img2 img{
-    width: 800px;
-    position: relative;
-    z-index: 1;
-    border: 1px solid black;
-}
-.ads_img2 i{
-    border: none;
-    position: absolute;
-    top: 0%;
-    right: 0%;
-    z-index: 2;
-    cursor: pointer;
-}
-
 
 
 /* <!-- =============================== * product img * ============================================ --> */
@@ -287,7 +248,7 @@ body{
  padding-left: 20px;
  border: 1px solid rgb(179,178,178);
  border-radius: 5px;
- background-color: white;
+ background-color:#aed5d2;
  padding-bottom: 15px;
 }
 .descriptiopn h3{
