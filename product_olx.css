@@ -1,14 +1,10 @@
 *{
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-
-
 body{
-    background-color: #aed5d2;
+    background-color: #AED5D2;
 }
 
 
@@ -24,14 +20,14 @@ body{
 }
 .navbar{
     display: flex;
-    align-items:start;
-    width: 1300px;
-    opacity: 63%;
-    margin: auto;
 }
-
-.navbar img{ 
- width: 70px;
+.container1{
+    background-color: #d7f0ee;
+    height: 75vh;
+    margin: 52px -20vh;
+    width: 140vh;
+    border-radius: 10vh;
+    box-shadow: 5px 10px #96b5b2;
 }
 
 
@@ -105,105 +101,22 @@ body{
 
 
 
-#eng_tag{
-    cursor: pointer;
-    font-size: 18px;
-    margin-left: 25px;
-}
-.hin_eng{
-    background-color: white;
-    box-shadow: 0 0 10px grey;
-    width: 130px;
-    display: none;
-    position: absolute;
-    top: 60px;
-}
-.hin_eng li{
-   list-style: none;
-   padding: 10px 20px;
-   margin-top: 10px;
-}
-.hin_eng li:hover{
-    background-color: #c7dcff;
-}
-.display_div{
-    display: block;
-}
 
 
-
-
-
-.messeage i{
-    font-size: 22px;
-    color: black;
-    cursor: pointer;
-    margin-left: 25px;
+.prize{
+    margin-bottom: 5vh;
 }
 
-
-.nameandimg img{
-    width: 65px;
-    border-radius: 50%;
-}
-.nameandimg p{
-    font-size: 18px;
-    font-weight: bold;
-}
-.nameandimg{
-    display: flex;
-    align-items: center;
-    margin: 10px 0 20px 0;
-}
-.dropdwon{
-    width: 250px;
-    box-shadow: 0 0 10px grey;
-    padding: 15px;
-    background-color: white;
-    display: none;
-    position: absolute;
-    top: 60px;
-}
-.dropdwon ul li{
-    display: flex;
-    padding: 10px;
-    margin-top: 5px;
-    cursor: pointer;
-}
-.dropdwon ul li:hover{
-    background-color: #c7dcff;
-}
-.dropdwon ul{
-    margin-top: 20px;
-}
-.dropdwon ul li i{
-    color: black;
-    font-size: 17px;
-}
-.dropdwon ul li p{
-    margin-left: 10px;
-  font-size: 17px;
-}
-.block_div{
-    display: block;
+.objectimg{
+    padding: 7vh;
 }
 
-
-.selling_page button{
-    margin-left: 25px;
-    border-style:solid ;
-    border-width: 5px;
-    border-top-color: #23e5db;
-    border-left-color: #ffce32;
-    border-right-color: #3a77ff;
-    border-bottom-color: #3a77ff;
-    font-size: 15px;
-    cursor: pointer;
-    padding: 6px 12px;
-    border-radius: 30px;
-    background-color: white;
-    color: black;
-    display: flex;
+.container3{
+    background-color: #d7f0ee;
+    margin: 0vh 10vh;
+    border-radius: 10vh;
+    box-shadow: 5px 10px #96b5b2;
+    display:flex
 }
 
 
@@ -271,110 +184,16 @@ body{
     margin-left: 10px;
 }
 
-
-
-/* <!-- =============================== *  box 1 *============================================ --> */
-
-.box{
-    background-color: white;
-    border: 1px solid rgb(179, 178, 178);
-    border-radius: 5px;
-}
 .price{
     display: flex;
-    justify-content: space-between;
-}
-.price h3{
-    font-size: 30px;
-    font-weight: bold;
-    padding: 10px;
-}
-.price p{
-  font-size: 25px;
-  font-weight: normal;
-  float: left;
-  margin-right: 10px;
-  padding: 10px 0 10px 10px;
-  cursor: pointer;
-}
-.box span{
-    color: #757674;
-    padding: 0 0 10px 10px;
-}
-.location{
-    display: flex;
-    justify-content: space-between;
-    font-size: 11px;
-    padding: 15px 10px 15px 10px ;
+    margin-bottom: 3vh;
 }
 
-
-
-
-/* <!-- =============================== *  box 2 *============================================ --> */
-
-
-.seller_detail img{
-    width: 55px;
-    border-radius: 50%;
-    margin: 10px 10px 8px 10px ;
-}
-.seller_detail{
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-.Seller_description{
-    font-size: 17px;
-   color:  #212f34;
-   padding: 10px 0 5px 10px;
-}
-.seller_detail h2{
-    font-size: 18px;
-}
-.seller_detail p{
-    font-size: 13px;
-}
-.box a{
-    text-decoration: none;
-    color: black;
-    padding: 10px 125px;
-    border: 2px solid black;
-    margin: 10px;
-    transition: all 0.3s;
-}
-.box a:hover{
-    border: 4px solid black;
-}
-#box2{
-    height: 170px;
-    margin-top: 10px
+.prizeicon{
+    padding-left: 20vh;
+display: flex;
 }
 
-
-
-
-
-
-/* <!-- =============================== *  box 3 *============================================ --> */
-
-
-
-#box3{
-    margin-top: 10px;
+.share{
+    margin-right: 2vh;
 }
-#box3 h2{
-    font-size: 18px;
-    padding: 15px;
-}
-#box3 p{
-    font-size: 13px;
-    padding: 0 0 10px 15px;
-}
-#box3 img{
-    width: 390px;
-    padding: 0 15px;
-    padding-bottom: 10px;
-}
-
-
