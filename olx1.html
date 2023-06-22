@@ -9,32 +9,396 @@
     <link rel="stylesheet" href="olx1.css">
     <title> olx</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
 
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <div class="mainBody">
     <div class="header1">
-
+<form action="">
             <img class="logo" src="images/logo.png">
 
             
-                <form action="">
-                    <input type="search" class="search" placeholder="Search...">
+                
+                    <input type="search" class="search" placeholder="Search for Products...">
                     <button type="submit">Search</button>
+                    <span class="glyphicon glyphicon-filter" style="left:300px"><b>Filter</b></span>
+                    <a href="#" class="btn btn-secondary btn-lg active " style="left:870px;position: relative;" role="button" aria-pressed="true">Login</a>
+                    <a href="#" class="btn btn-secondary btn-lg active " style="left:900px;position: relative;" role="button" data-toggle="modal" data-target="#SignupModal" aria-pressed="true">Sign-up</a>
                 </form>
-            
+                <!-- Sign up Model             -->
+                <div class="modal fade" id="SignupModal" tabindex="-1" role="dialog" aria-labelledby="SignupModalLabel"
+                aria-hidden="true">
+                <div class="wrapper">
+                    
+                    <form action="" id="wizard">
+                        
+                        <!-- SECTION 1 -->
+                        <h2></h2>
+                        <section>
+                            <div class="inner">
+                                <div class="image-holder">
+                                    <img src="images/form-wizard-1.jpg" alt="">
+                                </div>
+                                
+                                <div class="form-content" >
+                                    
+                                    <div class="form-header">
+                                        <h3>Registration</h3>
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="SignupModalLabel">Close </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                              <span aria-hidden="true" style="font-weight: bolder;">&times;</span>
+                                            </button>
+                                          </div>
+                                    </div>
+                                    
+                                    <p>Please fill with your details</p>
+                                    <div class="form-row">
+                                        <div class="form-holder">
+                                            <input type="text" placeholder="First Name" class="form-control">
+                                        </div>
+                                        <div class="form-holder">
+                                            <input type="text" placeholder="Last Name" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-holder">
+                                            <input type="text" placeholder="Your Email" class="form-control">
+                                        </div>
+                                        <div class="form-holder">
+                                            <input type="text" placeholder="Phone Number" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-holder">
+                                            <input type="text" placeholder="Age" class="form-control">
+                                        </div>
+                                        <div class="form-holder" style="align-self: flex-end; transform: translateY(4px);">
+                                            <div class="checkbox-tick">
+                                                <label class="male">
+                                                    <input type="radio" name="gender" value="male" checked> Male<br>
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="female">
+                                                    <input type="radio" name="gender" value="female"> Female<br>
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="checkbox-circle">
+                                        <label>
+                                            <input type="checkbox" checked> Nor again is there anyone who loves or pursues or desires to obtaini.
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+        
+                        <!-- SECTION 2 -->
+                        <h2></h2>
+                        <section>
+                            <div class="inner">
+                                <div class="image-holder">
+                                    <img src="images/form-wizard-2.jpg" alt="">
+                                </div>
+                                <div class="form-content">
+                                    <div class="form-header">
+                                        <h3>Registration</h3>
+                                    </div>
+                                    <p>Please fill with additional info</p>
+                                    <div class="form-row">
+                                        <div class="form-holder w-100">
+                                            <input type="text" placeholder="Address" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-holder">
+                                            <input type="text" placeholder="City" class="form-control">
+                                        </div>
+                                        <div class="form-holder">
+                                            <input type="text" placeholder="Zip Code" class="form-control">
+                                        </div>
+                                    </div>
+        
+                                    <div class="form-row">
+                                        <div class="select">
+                                            <div class="form-holder">
+                                                <div class="select-control">Your country</div>
+                                                <i class="zmdi zmdi-caret-down"></i>
+                                            </div>
+                                            <ul class="dropdown">
+                                                <li rel="United States">United States</li>
+                                                <li rel="United Kingdom">United Kingdom</li>
+                                                <li rel="Viet Nam">Viet Nam</li>
+                                            </ul>
+                                        </div>
+                                        <div class="form-holder"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+        
+                        <!-- SECTION 3 -->
+                        <h2></h2>
+                        <section>
+                            <div class="inner">
+                                <div class="image-holder">
+                                    <img src="images/form-wizard-3.jpg" alt="">
+                                </div>
+                                <div class="form-content">
+                                    <div class="form-header">
+                                        <h3>Registration</h3>
+                                    </div>
+                                    <p>Send an optional message</p>
+                                    <div class="form-row">
+                                        <div class="form-holder w-100">
+                                            <textarea name="" id="" placeholder="Your messagere here!" class="form-control" style="height: 99px;"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="checkbox-circle mt-24">
+                                        <label>
+                                            <input type="checkbox" checked>  Please accept <a href="#">terms and conditions ?</a>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </form>
+                </div>
+        
+                <!-- JQUERY -->
+                <script src="js/jquery-3.3.1.min.js"></script>
+        
+                <!-- JQUERY STEP -->
+                <script src="js/jquery.steps.js"></script>
+                <script src="js/main.js"></script>
+                </div>
         
             
 
-    </div>
+   
 
 
     <!-- =============================== * navbar * ============================================ -->
-
-    <div class="hedder">
-
-        </div>
+                <div style="background-color: #696969; padding: 10px;width: 100%;justify-content: space-between;">
+                    <button class="btn btn-primary dropdown-toggle textButton"  type="button" data-bs-toggle="dropdown">
+                        Mobile Phones
+                         
+                      </button>
+                      <style>
+                        .textButton {
+                            background: none;
+                            border: none;
+                        }
+                 
+                        #textButton:hover {
+                            background-color: green;
+                        }
+                    </style>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                      <button class="btn btn-primary dropdown-toggle textButton" type="button" data-bs-toggle="dropdown">
+                        Electronic Appliances
+                        
+                      </button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                      <button class="btn btn-primary dropdown-toggle textButton" type="button" data-bs-toggle="dropdown">
+                        Bikes and Cars
+                        
+                      </button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                      <button class="btn btn-primary dropdown-toggle textButton" type="button" data-bs-toggle="dropdown">
+                        Furniture
+                        
+                      </button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                      <button class="btn btn-primary dropdown-toggle textButton" type="button" data-bs-toggle="dropdown">
+                        Books,Sports and Hobbies
+                       
+                      </button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                      <div class="toggle-button-cover">
+                        <div class="button-cover">
+                          <div class="button r" id="button-1">
+                            <input type="checkbox" class="checkbox" />
+                            <div class="knobs"></div>
+                            <div class="layer"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <style>*:focus {
+                        outline: none;
+                      }
+                      
+                      body {
+                        font-family: Arial, Helvetica, sans-serif;
+                        margin: 0;
+                        background-color: #f1f9f9;
+                      }
+                      
+                      #app-cover {
+                        display: table;
+                        width: 600px;
+                        margin: 80px auto;
+                        counter-reset: button-counter;
+                      }
+                      
+                      .row {
+                        display: table-row;
+                      }
+                      
+                      .toggle-button-cover {
+                        display: table-cell;
+                        position: relative;
+                        width: 220px;
+                        height: 10px;
+                        box-sizing: border-box;
+                      }
+                      
+                      .button-cover {
+    height: 30px;
+    margin: 0px;
+    width: 90px;
+    background-color: #fff;
+    box-shadow: 0 10px 20px -8px #c5d6d6;
+    border-radius: 50px;
+}
+                      
+                      .button-cover:before {
+                        counter-increment: button-counter;
+                        content: counter(button-counter);
+                        position: relative;
+                        width: 50px;
+                        right: 0;
+                        left: 500px;
+                        bottom: 0;
+                        color: #d7e3e3;
+                        font-size: 12px;
+                        line-height: 1;
+                        padding: 5px;
+                      }
+                      
+                      .button-cover,
+                      .knobs,
+                      .layer {
+                        position: absolute;
+                        top: -25px;
+                        right: 0;
+                        bottom: 0;
+                        left: 1300px;
+                      }
+                      
+                      .button {
+                        position: relative;
+                        top: 50%;
+                        width: 74px;
+                        height: 36px;
+                        margin: -20px auto 0 auto;
+                        overflow: hidden;
+                      }
+                      
+                      .button.r,
+                      .button.r .layer {
+                        width: 80px;
+                        border-radius: 100px;
+                      }
+                      
+                      .button.b2 {
+                        border-radius: 2px;
+                      }
+                      
+                      .checkbox {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        padding: 0;
+                        margin: 0;
+                        opacity: 0;
+                        cursor: pointer;
+                        z-index: 3;
+                      }
+                      
+                      .knobs {
+                        z-index: 2;
+                      }
+                      
+                      .layer {
+                        width: 100%;
+                        background-color: #ebf7fc;
+                        transition: 0.3s ease all;
+                        z-index: 1;
+                      }
+                      
+                      /* Button 1 */
+                      #button-1 .knobs:before {
+                        content: "BUY";
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        width: 30px;
+                        height: 30px;
+                        color: #fff;
+                        font-size: 10px;
+                        font-weight: bold;
+                        text-align: center;
+                        line-height: 1;
+                        padding: 9px 4px;
+                        background-color: #03a9f4;
+                        border-radius: 50px;
+                        transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+                      }
+                      
+                      #button-1 .checkbox:checked + .knobs:before {
+                        content: "RENT";
+                        left: 42px;
+                        background-color: #f44336;
+                      }
+                      
+                      #button-1 .checkbox:checked ~ .layer {
+                        background-color: #fcebeb;
+                      }
+                      
+                      #button-1 .knobs,
+                      #button-1 .knobs:before,
+                      #button-1 .layer {
+                        transition: 0.3s ease all;
+                      }
+                      
+                      
+                      </style>
+                </div>
+    
+            
+        
     </div>
     <!-- =============================== * ad 1 * ============================================ -->
 <!-- Crousal -->
