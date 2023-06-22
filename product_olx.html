@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="product_olx.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -22,94 +24,22 @@
 
 
 
-            <img src="images/olx_logo.png">
-
-
-
-
-
-
-            <div class="contry_select" id="contry">
-                <div class="select">
-                    <p id="text"> Select Your Contry </p>
-                    <i class="fa-solid fa-chevron-down" id="moving"></i>
-                </div>
-
-
-                <ul class="option_box" id="list">
-                    <li class="option" onclick="myfunction('USA')">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <p>USA</p>
-                    </li>
-                    <li class="option" onclick="myfunction('Canada')">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <p>Canada</p>
-                    </li>
-                    <li class="option" onclick="myfunction('India')">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <p>India</p>
-                    </li>
-                    <li class="option" onclick="myfunction('Pakistan')">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <p>Pakistan</p>
-                    </li>
-                    <li class="option" onclick="myfunction('New York')">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <p>New York</p>
-                    </li>
-                </ul>
-            </div>
-
-
-
+            <img src="images/logo.png">
 
 
             <div class="search_box">
-                <input type="text" class="searchclass" id="searchid" placeholder="Find Cars, mobile phone and More....">
+                <input type="text" class="searchclass" id="searchid" placeholder="Search...">
                 <p> <i class="fa-solid fa-magnifying-glass"></i> </p>
             </div>
 
 
 
 
-            <div class="language">
-                <p id="eng_tag"> English </p>
-
-                <ul class="hin_eng">
-                    <li onclick="languageolx('English')"> English </li>
-                    <li onclick="languageolx('हिन्दी')">हिन्दी</li>
-                </ul>
-
-            </div>
-
-
-
-
-            <div class="messeage">
-                <i class="fa-regular fa-comment"></i>
-            </div>
-
-
-
-
-            <div class="messeage">
-                <i class="fa-regular fa-bell"></i>
-            </div>
-
-
-
-
-
-            <div class="your_logo">
-                <div class="girl_img" id="girl_img_id">
-                    <img src="images/pic3.jpg">
-                </div>
-
                 <div class="dropdwon" id="gropdwonid">
                     <div class="nameandimg">
                         <img src="images/pic3.jpg">
                         <p> Puja Varma </p>
-                    </div>
+
 
                     <ul>
                         <li>
@@ -141,14 +71,7 @@
             </div>
 
 
-
-
-
-            <div class="selling_page">
-                <button> <i class="fa-solid fa-plus"></i>
-                    <p>SELL</p>
-                </button>
-            </div>
+            
 
 
         </div>
@@ -158,10 +81,6 @@
     <!-- =============================== * ad 1 * ============================================ -->
 
 
-    <div class="ads_img2">
-        <img src="images/ad2.jpg">
-        <i class="fa-regular fa-rectangle-xmark" id="adicon2"></i>
-    </div>
 
 
 
@@ -172,31 +91,36 @@
     <div class="product_img">
 
 
-        <div class="image_discription">
-            <div class="swiper">
-                <div class="swiper-wrapper">
-
-                    <div class="swiper-slide"> <img src="images/pro_1.jpg"> </div>
-                    <div class="swiper-slide"> <img src="images/pro_2.jpg"></div>
-                    <div class="swiper-slide"> <img src="images/pro_3.jpg"></div>
-                    <div class="swiper-slide"> <img src="images/pro_4.jpg"></div>
-
-                </div>
-
-                <div class="swiper-pagination"></div>
-
-
-                <div class="swiper-button-prev" id="prev"></div>
-                <div class="swiper-button-next" id="next"></div>
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner" style="height:376 px;width: 850px;">
+              <div class="carousel-item active">
+                <img src="images/127.jpeg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/128.jpeg" class="d-block w-100" style="height: 376px;width: 800px;" alt="...">
+              </div>
+              <div class="carousel-item">
+                    <img src="images/126.jpeg" class="d-block w-100" style="height: 376px;width: 800px;" alt="...">
+              </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
 
-            <div class="descriptiopn">
-                <h3> descriptiopn </h3>
-                <p>Convert your TV into smart TV using HDMI of your TV. All online platform available downloaded. <br>
-                    Include MI stick, Bluetooth remote, Power adapter. <br>
-                    Condition new. <br>
-                    MRP 3,500</p>
-            </div>
+
+        <div class="description">
+            <h3> description </h3>
+            <p>Convert your TV into smart TV using HDMI of your TV. All online platform available downloaded. <br>
+                Include MI stick, Bluetooth remote, Power adapter. <br>
+                Condition new. <br>
+                MRP 3,500</p>
         </div>
 
         <div class="product_details">
@@ -244,9 +168,6 @@
 
 
 
-
-
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script>
         //  =============================== * navbar * ============================================
 
@@ -283,21 +204,6 @@
         girl_img_id.addEventListener('click', () => {
             gropdwonid.classList.toggle('block_div')
         });
-
-
-
-
-        //  =============================== * ad 2 * ============================================
-
-
-
-        let adicon2 = document.getElementById('adicon2');
-        let ads_img2 = document.querySelector('.ads_img2');
-
-        adicon2.addEventListener('click', () => {
-            ads_img2.style = 'display: none';
-        });
-
 
 
 
