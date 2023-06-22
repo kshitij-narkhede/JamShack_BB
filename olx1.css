@@ -8,11 +8,11 @@
 
 
 /* <!-- =============================== * navbar * ============================================ --> */
-body{
+body {
     background-color: #AED5D2;
 }
 .hedder{
-    background-color: #f7f8f9;
+    background-color: #33b3ca;
     box-shadow: 0 0 2px grey;
     position: sticky;
     top: 0%;
@@ -284,10 +284,20 @@ body{
 
 
 /* <!-- =============================== * product* ============================================ --> */
+.product{
+    background-color: #AED5D2;
+    width: 100%;
+}
 
 
-
-
+.heading2{
+    position: relative;
+    text-align: center;
+    /* height: 100%; */
+    padding-bottom: 10px;
+    /* margin-top: 80px; */
+    background-color: #AED5D2;
+}
 
 
 .First_row{
@@ -305,7 +315,11 @@ width: 250px;
     width: 260px;
     height: 230px;
     cursor: pointer;
+    background-color: wheat;
+    border-radius: 16px;
+    box-shadow: 10px 10px #696969;
 }
+
 .box:hover{
     border: 1px solid rgb(138, 137, 139);
 }
@@ -429,7 +443,15 @@ width: 250px;
   padding-left: 20px;
   cursor: pointer;
 }
-
+.recommText{
+    position: relative;
+    left: 0px;
+    padding-top: 10px;
+    background-color: #AED5D2;
+    height: 100px;
+    width:100%;
+    margin: 0;
+}
 
 
 
@@ -440,6 +462,7 @@ width: 250px;
 .Main_footerP{
     background-color: #ebeeef;
 }
+
 .footer{
     display: flex;
     align-items: center;
