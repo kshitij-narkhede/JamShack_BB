@@ -16,6 +16,7 @@
 
 		<!-- STYLE CSS -->
 		<link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
@@ -23,17 +24,48 @@
     <div class="header1">
 <form action="">
             <img class="logo" src="images/logo.png">
-
-            
-                
                     <input type="search" class="search" placeholder="Search for Products...">
                     <button type="submit">Search</button>
                     <span class="glyphicon glyphicon-filter" style="left:300px"><b>Filter</b></span>
-                    <a href="#" class="btn btn-secondary btn-lg active " style="left:870px;position: relative;" role="button" aria-pressed="true">Login</a>
+                    <a href="#" class="btn btn-secondary btn-lg active " style="left:870px;position: relative;" role="button" data-toggle="modal" data-target="#LoginModal"  aria-pressed="true">Login</a>
                     <a href="#" class="btn btn-secondary btn-lg active " style="left:900px;position: relative;" role="button" data-toggle="modal" data-target="#SignupModal" aria-pressed="true">Sign-up</a>
                 </form>
-                <!-- Sign up Model             -->
-                <div class="modal fade" id="SignupModal" tabindex="-1" role="dialog" aria-labelledby="SignupModalLabel"
+                    <!-- Login Model -->
+                    <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog"  aria-labelledby="LoginModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content" style="background-color: #AED5D2;">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="LoginModalLabel">Login to ModishTrade</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <img src="images/logo.png" style="width: 150px;height: 100px;position: relative;left: 180px;top:50px;">
+                            <!-- <h1 style="position: relative;left: 140px;top: 70px;">ModishTrade</h1> -->
+                            <div class="container" style="height: 300px;width: 300px;margin-top: 100px;">
+                            
+                            <form>
+                                <div class="form-group">
+                                <label for="exampleInputEmail1">Email ID</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email" style="display: block; background-color:  #ffffff;;border-radius: 16px;border-color: black;border-width: 2px;">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                </div>
+                                <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Your Password" style="display: block; background-color: #ffffff;border-radius: 16px;border-color: black;border-width: 2px;">
+                                </div>
+                                <button style="background-color: azure;position: relative;left:95px; padding: 5px;border-radius: 16px;width: 100px;box-shadow: #696969;">Login</button>
+                            
+
+                            </form>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                                   <!-- Sign up Model             -->
+                <div class="modal fade" id="SignupModal" tabindex="-2" role="dialog" aria-labelledby="SignupModalLabel"
                 aria-hidden="true">
                 <div class="wrapper">
                     
@@ -128,7 +160,6 @@
                                             <input type="text" placeholder="Zip Code" class="form-control">
                                         </div>
                                     </div>
-        
                                     <div class="form-row">
                                         <div class="select">
                                             <div class="form-holder">
@@ -246,155 +277,51 @@
                         <a class="dropdown-item" href="#">Another action</a>
                         <a class="dropdown-item" href="#">Something else here</a>
                       </div>
-                      <div class="toggle-button-cover">
-                        <div class="button-cover">
-                          <div class="button r" id="button-1">
-                            <input type="checkbox" class="checkbox" />
-                            <div class="knobs"></div>
-                            <div class="layer"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <style>*:focus {
-                        outline: none;
-                      }
-                      
-                      body {
-                        font-family: Arial, Helvetica, sans-serif;
-                        margin: 0;
-                        background-color: #f1f9f9;
-                      }
-                      
-                      #app-cover {
-                        display: table;
-                        width: 600px;
-                        margin: 80px auto;
-                        counter-reset: button-counter;
-                      }
-                      
-                      .row {
-                        display: table-row;
-                      }
-                      
-                      .toggle-button-cover {
-                        display: table-cell;
-                        position: relative;
-                        width: 220px;
-                        height: 10px;
-                        box-sizing: border-box;
-                      }
-                      
-                      .button-cover {
-    height: 30px;
-    margin: 0px;
-    width: 90px;
-    background-color: #fff;
-    box-shadow: 0 10px 20px -8px #c5d6d6;
-    border-radius: 50px;
-}
-                      
-                      .button-cover:before {
-                        counter-increment: button-counter;
-                        content: counter(button-counter);
-                        position: relative;
-                        width: 50px;
-                        right: 0;
-                        left: 500px;
-                        bottom: 0;
-                        color: #d7e3e3;
-                        font-size: 12px;
-                        line-height: 1;
-                        padding: 5px;
-                      }
-                      
-                      .button-cover,
-                      .knobs,
-                      .layer {
-                        position: absolute;
-                        top: -25px;
-                        right: 0;
-                        bottom: 0;
-                        left: 1300px;
-                      }
-                      
-                      .button {
-                        position: relative;
-                        top: 50%;
-                        width: 74px;
-                        height: 36px;
-                        margin: -20px auto 0 auto;
-                        overflow: hidden;
-                      }
-                      
-                      .button.r,
-                      .button.r .layer {
-                        width: 80px;
-                        border-radius: 100px;
-                      }
-                      
-                      .button.b2 {
-                        border-radius: 2px;
-                      }
-                      
-                      .checkbox {
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        padding: 0;
-                        margin: 0;
-                        opacity: 0;
+                      <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
+                     <style>input[type=checkbox]{
+                        height: 0;
+                        width: 0;
+                        visibility: hidden;
+                    }
+                    
+                    label {
                         cursor: pointer;
-                        z-index: 3;
-                      }
-                      
-                      .knobs {
-                        z-index: 2;
-                      }
-                      
-                      .layer {
-                        width: 100%;
-                        background-color: #ebf7fc;
-                        transition: 0.3s ease all;
-                        z-index: 1;
-                      }
-                      
-                      /* Button 1 */
-                      #button-1 .knobs:before {
-                        content: "BUY";
-                        position: absolute;
-                        top: 0px;
-                        left: 0px;
+                        content: 'RENT';
+                        text-indent: -9999px;
+                        width: 85px;
+                        height: 40px;
+                        background: rgb(185, 42, 42);
+                        display: block;
+                        border-radius: 100px;
+                        position: fixed;
+                        left: 1350px;
+                        top:65px;
+                    }
+                    
+                    label:after {
+                        content: 'BUY';
+                        position: fixed;
+                        top: 70px;
+                        left: 1355px;
                         width: 30px;
                         height: 30px;
-                        color: #fff;
-                        font-size: 10px;
-                        font-weight: bold;
-                        text-align: center;
-                        line-height: 1;
-                        padding: 9px 4px;
-                        background-color: #03a9f4;
-                        border-radius: 50px;
-                        transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
-                      }
-                      
-                      #button-1 .checkbox:checked + .knobs:before {
-                        content: "RENT";
-                        left: 42px;
-                        background-color: #f44336;
-                      }
-                      
-                      #button-1 .checkbox:checked ~ .layer {
-                        background-color: #fcebeb;
-                      }
-                      
-                      #button-1 .knobs,
-                      #button-1 .knobs:before,
-                      #button-1 .layer {
-                        transition: 0.3s ease all;
-                      }
-                      
-                      
-                      </style>
+                        background: #fff;
+                        border-radius: 90px;
+                        transition: 0.3s;
+                    }
+                    
+                    input:checked + label {
+                        background: #de3de6;
+                    }
+                    
+                    input:checked + label:after {
+                        left: calc(100% - 90px);
+                        transform: translateX(-100%);
+                    }
+                    
+                    label:active:after {
+                        width: 45px;
+                    }</style>
                 </div>
     
             
@@ -402,16 +329,16 @@
     </div>
     <!-- =============================== * ad 1 * ============================================ -->
 <!-- Crousal -->
-<div id="carouselExample" class="carousel slide" style="width: 1475px; height:550px;  border-radius: 16px; margin-bottom: 15px;margin-left: 25px;margin-right: 25;">
+<div id="carouselExample" class="carousel slide" style="width: 1475px; height:550px;   margin-bottom: 15px;margin-left: 25px;margin-right: 25px;">
     <div class="carousel-inner " >
       <div class="carousel-item active">
-        <img src="images/127.png" class="d-block w-100"  alt="..." style="height:585px;">
+        <img src="images/127.png" class="d-block w-100"  alt="..." style="height:555px;border-radius: 20px;">
       </div>
       <div class="carousel-item">
-        <img src="images/128.png" class="d-block w-100"  alt="..." style="height:585px;">
+        <img src="images/128.png" class="d-block w-100"  alt="..." style="height:555px;border-radius: 20px;">
       </div>
       <div class="carousel-item">
-            <img src="images/126.png" class="d-block w-100" alt="..." style="height:585px;">
+            <img src="images/126.png" class="d-block w-100" alt="..." style="height:555px;border-radius: 20px;">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -616,110 +543,6 @@
                 <div><Button class="makeDeal">Make a Deal</Button></div>
             </div>
         </div>
-
-    </div>
-
-
-
-
-
-    <!-- =============================== * LOde more * ============================================ -->
-
-
-
-    <div class="LOde_more">
-        <button id="Lode_more_id"> Lode More </button>
-
-
-
-        <div class="lode-More_products" id="lode_more_products_id">
-            <div class="First_row">
-                <div class="box">
-                    <a href="#"></a>
-                    <img src="images/product-1.jpg">
-                    <h2>₹3,500</h2>
-                    <p>Mi TV Stick</p>
-                    <div class="addres_data">
-                        <p>Bandra East, Mumbai</p>
-                        <p>Today</p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="images/product-2.jpg">
-                    <h2> ₹4800 </h2>
-                    <p> xbox one s</p>
-                    <div class="addres_data">
-                        <p>CHEMBUR, MUMBAI</p>
-                        <p> JUL 27</p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="images/product-3.jpg">
-                    <h2> ₹7000</h2>
-                    <p> Refrigerator</p>
-                    <div class="addres_data">
-                        <p>DHARAVI, MUMBAI</p>
-                        <p> Today </p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="images/product-4.jpg">
-                    <h2> ₹8,00,000 </h2>
-                    <p> Mitsubishi Pajero (2012) </p>
-                    <div class="addres_data">
-                        <p>VERSOVA, MUMBAI</p>
-                        <p> Today </p>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="First_row">
-                <div class="box">
-                    <img src="images/product-5.jpg">
-                    <h2> ₹800 </h2>
-                    <p> Black Jeans for man</p>
-                    <div class="addres_data">
-                        <p>BORIVALI WEST, MUMBAI</p>
-                        <p> DEC 24 </p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="images/product-6.jpg">
-                    <h2> ₹3,000 </h2>
-                    <p> Pricise corrom board</p>
-                    <div class="addres_data">
-                        <p>IC COLONY, MUMBAI</p>
-                        <p> JAN 29 </p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="images/product-7.jpg">
-                    <h2> ₹3,800 </h2>
-                    <p> CrossBeat Torq Buds</p>
-                    <div class="addres_data">
-                        <p>DHARAVI, MUMBAI</p>
-                        <p> Today </p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="images/product-8.jpg">
-                    <h2> ₹39,000 </h2>
-                    <p> Nikon D7000 DSLR camera </p>
-                    <div class="addres_data">
-                        <p>ANDHERI WEST, MUMBAI</p>
-                        <p> FEB 02 </p>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-        </div>
-
-
 
     </div>
     <!-- =============================== * footer * ============================================ -->
