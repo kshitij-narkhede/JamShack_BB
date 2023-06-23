@@ -75,7 +75,7 @@ const loginSchema = new mongoose.Schema({
 // const Listing = new mongoose.model("product",listingSchema);
 // const Demand = new mongoose.model("product",demandSchema);
 // const Wishlist = new mongoose.model("product",wishlistSchema);
-const Login = new mongoose.model("product",loginSchema);
+const Login = new mongoose.model("login",loginSchema);
 // const Order = new mongoose.model("product",ordersSchema);
 
 
@@ -84,11 +84,11 @@ const Login = new mongoose.model("product",loginSchema);
 
         const user_login = new Login(
             {
-                email: "sharvilnichat@gmail.com",
+                email: "rutuja@gmail.com",
                 password:"123",
-                username:"Shark11",
-                phoneno:"9865487515",
-                address:"Gokul Nagar,Pune",
+                Username:"Shark11",
+                Phoneno:"9865487515",
+                Address:"Gokul Nagar,Pune",
             }
             )
             
@@ -97,6 +97,6 @@ const Login = new mongoose.model("product",loginSchema);
     }catch(e){console.log(e);}
 }
 
-createDocument();
+// createDocument();
 
-
+module.exports = createDocument;
