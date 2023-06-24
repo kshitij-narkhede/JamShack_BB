@@ -18,23 +18,56 @@ const { ObjectId, Decimal128 } = require("mongodb");
 // })
 
 const loginSchema = new mongoose.Schema({
-    
-    "email": {
-      "type": "String"
-    },
-    "password": {
-      "type": "String"
-    },
-    "Username": {
-      "type": "String"
-    },
-    "Phoneno": {
-      "type": "String"
-    },
-    "Address": {
+  "_id": {
+    "$oid": {
+      "type": "ObjectId"
+    }
+  },
+  "firstname": {
+    "type": "String"
+  },
+  "lastname": {
+    "type": "String"
+  },
+  "email": {
+    "type": "String"
+  },
+  "phoneno": {
+    "type": "String"
+  },
+  "age": {
+    "$numberInt": {
       "type": "String"
     }
-  })
+  },
+  "Address": {
+    "type": "String"
+  },
+  "City": {
+    "type": "String"
+  },
+  "zipcode": {
+    "type": "String"
+  },
+  "password": {
+    "type": "String"
+  },
+  "wishlist": {
+    "type": [
+      "Mixed"
+    ]
+  },
+  "orders": {
+    "type": [
+      "Mixed"
+    ]
+  },
+  "listings": {
+    "type": [
+      "Mixed"
+    ]
+  }
+})
 
 // const ordersSchema=new mongoose.Schema({
 //     p_id : ObjectId,
@@ -71,10 +104,10 @@ const loginSchema = new mongoose.Schema({
 // })
 
 
-// const Product = new mongoose.model("product",productSchema);
-// const Listing = new mongoose.model("product",listingSchema);
-// const Demand = new mongoose.model("product",demandSchema);
-// const Wishlist = new mongoose.model("product",wishlistSchema);
+const Product = new mongoose.model("product",productSchema);
+const Listing = new mongoose.model("listing",listingSchema);
+const Demand = new mongoose.model("product",demandSchema);
+const Wishlist = new mongoose.model("product",wishlistSchema);
 const Login = new mongoose.model("login",loginSchema);
 // const Order = new mongoose.model("product",ordersSchema);
 
@@ -86,9 +119,15 @@ const Login = new mongoose.model("login",loginSchema);
             {
                 email: "rutuja@gmail.com",
                 password:"123",
-                Username:"Shark11",
-                Phoneno:"9865487515",
+                firstname:"Shark",
+                lastname:"Stark",
+                phoneno:"9865487515",
                 Address:"Gokul Nagar,Pune",
+                age:"19",
+                City:"Pune",
+                zipcode:"411046",
+                password:"Shark123",
+                  
             }
             )
             
