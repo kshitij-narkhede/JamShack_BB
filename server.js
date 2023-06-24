@@ -21,7 +21,55 @@ try{
     console.log('Database connected sucessfully');
 
 
-  
+
+    app.get('/sign_up', (req, res) => {
+      fs.readFile('sign_up.html', 'utf8', (err, data) => {
+        if (err) {
+          console.error('Error reading sign_up.html:', err);
+          res.status(500).send('Internal Server Error');
+          return;
+        }
+    
+        res.send(data);
+      });
+    });
+
+
+  app.post('/sign_up', async (req, res) => {
+      // const { model_name, category,physical_condition,warranty,date_of_purchase,color,dimension,quantity,price,description } = req.body;
+    
+      var fname = req.body.fname;
+      var lname =req.body.lname;
+      var age = req.body.age;
+      var email =req.body.email;
+      var password = req.body.password;
+      var phone =req.body.phone;
+      var address= req.body.address;
+      var city =req.body.city;
+      var zipcode = req.body.zipcode;
+
+
+      try {
+        
+          const createSignup = require('./models.js');
+          createSignup(fname, lname,age,email,password,phone,address,city,zipcode);
+    
+        res.send('Signup successful!');
+      } catch (error) {
+        console.error('Error signing up:', error);
+        res.send('Error signing up');
+      }
+    });
+    
+
+
+
+
+
+
+
+
+  /**************** SELL   ************************************************************************************************************** */
 
     // app.get('/sell', (req, res) => {
     //     res.send(`
@@ -86,7 +134,7 @@ try{
     app.get('/sell', (req, res) => {
         fs.readFile('sellform.html', 'utf8', (err, data) => {
           if (err) {
-            console.error('Error reading sell.html:', err);
+            console.error('Error reading sellform.html:', err);
             res.status(500).send('Internal Server Error');
             return;
           }
@@ -94,9 +142,6 @@ try{
           res.send(data);
         });
       });
-      
-
-
 
 
     app.post('/sell', async (req, res) => {
@@ -125,11 +170,6 @@ try{
           res.send('Error signing up');
         }
       });
-      
-
-
-
-
 }
 catch(error){
   console.log(error);

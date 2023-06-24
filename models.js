@@ -2,7 +2,7 @@ const res = require("express/lib/response");
 const mongoose   = require("mongoose");
 const { ObjectId, Decimal128 } = require("mongodb");
 
-
+// ************************      For sell form  *******************************************************
 
 const productSchema = new mongoose.Schema({
     model_name: {
@@ -79,3 +79,83 @@ const productSchema = new mongoose.Schema({
 // createDocument();
 
 module.exports = createProduct;
+
+
+
+
+
+
+
+const signupSchema = new mongoose.Schema({
+  fname: {
+    type: String,
+    required: true
+  },
+  lname: {
+    type: String,
+    required: true
+  },
+  age: {
+      type: String,
+      required: true
+    },
+    email: {
+      type: String,
+      required: true
+    },
+    password: {
+      type: String,
+      required: true
+    },
+    phone: {
+      type: String,
+      required: true
+    },
+    address: {
+      type: String,
+      required: true
+    },
+    city: {
+      type: String,
+      required: true
+    },
+    zipcode: {
+      type: String,
+      required: true
+    },
+    
+});
+
+
+const Signup = new mongoose.model("logins",signupSchema);
+
+
+const createSignup  = async(fname, lname,age,email,password,phone,address,city,zipcode) => {
+  try{
+
+      const signup_details = new Signup(
+          {
+              
+              "fname":fname,
+              "lname":lname,
+              "age": age,
+              "email":email,
+              "password":password,
+              "phone":phone,
+              "address":address,
+              "city":city,
+              "zipcode":zipcode,
+                
+          }
+          )
+          
+          const result = await signup_details.save();
+          console.log(result);
+  }catch(e){console.log(e);}
+}
+
+// createDocument();
+
+module.exports = createSignup;
+
+

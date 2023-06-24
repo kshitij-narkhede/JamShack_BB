@@ -27,7 +27,7 @@ crossorigin="anonymous">
 				
 		<div class="col-md-6 main" style="background-color: #AED5D2;">
 					
-			<form action="/sign_up" method="post">
+			<form action="/sign_up" method="POST">
 					<img src="images/logo.png" style="position: relative;left:200px;width: 150px;height:100px;box-shadow: #696969;border-radius: 16px;">
 			<h1> Signup form </h1>
 			<style>.box{
@@ -38,7 +38,9 @@ crossorigin="anonymous">
 			placeholder="First Name" required /><br>
 			<input class="box" type="text" name="lname" id="name"
 			placeholder="Last Name" required /><br>
-			<input class="box" type="email" name="email" id="email"
+			<input class="box" type="text" name="age" id="name"
+			placeholder="Age" required /><br>
+			<input class="box" type="text" name="email" id="age"
 			placeholder="E-Mail " required /><br>
 							
 			<input class="box" type="password" name="password"
@@ -47,13 +49,13 @@ crossorigin="anonymous">
 			<input class="box" type="text" name="phone" id="phone"
 			placeholder="Phone Number " required/><br>
 						<br>
-			<input class="box" type="text" name="address" id="phone"
+			<input class="box" type="text" name="address" id="address"
 			placeholder="Address " required/><br>
 									<br>
-			<input class="box" type="text" name="ity" id="phone"
+			<input class="box" type="text" name="city" id="city"
 			placeholder="City" required/><br>
 												<br>
-		<input class="box" type="text" name="zipcode" id="phone"
+		<input class="box" type="text" name="zipcode" id="zipcode"
 			placeholder="ZIP Code " required/><br>
 						<br>
 			<input type="submit" id="submitDetails"
