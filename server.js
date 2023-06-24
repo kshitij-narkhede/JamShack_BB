@@ -61,8 +61,50 @@ try{
       }
     });
     
+/******************* Login ***************************/
+
+app.get('/login', (req, res) => {
+  fs.readFile('login.html', 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading login.html:', err);
+      res.status(500).send('Internal Server Error');
+      return;
+    }
+
+    res.send(data);
+  });
+});
+
+app.post('/login', async (req, res) => {
+
+  try {
+    var email = req.body.email;
+      var password=req.body.password;
+      const Signup = require('./models.js');
+      const user = await Signup.findOne({ email })
 
 
+      if (user) {
+  
+        if (password === user.password) {
+          res.send('Login successful!');
+        } else {
+          res.send('Invalid password!');
+        }
+      } else {
+        res.send('User not found!');
+      }
+  } 
+  
+  catch (e) {
+
+      res.send("wrong details")
+      
+
+  }
+
+
+})
 
 
 
@@ -184,6 +226,6 @@ catch(error){
 
 database();
 
-app.listen(5000, () => {
+app.listen(3000, () => {
 console.log("Server is running at port 3000");
 });
