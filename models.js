@@ -18,11 +18,7 @@ const { ObjectId, Decimal128 } = require("mongodb");
 // })
 
 const loginSchema = new mongoose.Schema({
-  "_id": {
-    "$oid": {
-      "type": "ObjectId"
-    }
-  },
+  
   "firstname": {
     "type": "String"
   },
@@ -104,29 +100,31 @@ const loginSchema = new mongoose.Schema({
 // })
 
 
-const Product = new mongoose.model("product",productSchema);
-const Listing = new mongoose.model("listing",listingSchema);
-const Demand = new mongoose.model("product",demandSchema);
-const Wishlist = new mongoose.model("product",wishlistSchema);
+// const Product = new mongoose.model("product",productSchema);
+// const Listing = new mongoose.model("listing",listingSchema);
+// const Demand = new mongoose.model("product",demandSchema);
+// const Wishlist = new mongoose.model("product",wishlistSchema);
 const Login = new mongoose.model("login",loginSchema);
 // const Order = new mongoose.model("product",ordersSchema);
 
 
- const createDocument  = async() => {
+ const createDocument  = async(firstname, lastname,email,phoneno,age,Address,City,zipcode,password) => {
     try{
 
         const user_login = new Login(
             {
-                email: "rutuja@gmail.com",
-                password:"123",
-                firstname:"Shark",
-                lastname:"Stark",
-                phoneno:"9865487515",
-                Address:"Gokul Nagar,Pune",
-                age:"19",
-                City:"Pune",
-                zipcode:"411046",
-                password:"Shark123",
+                
+                // firstname:"Shark1",
+                // lastname:"Stark",
+                // email: "rutuja@gmail.com",
+                // phoneno:"9865487515",
+                // age:"19",
+                // Address:"Gokul Nagar,Pune",
+                
+                // City:"Pune",
+                // zipcode:"411046",
+                // password:"Shark123",
+                firstname, lastname,email,phoneno,age,Address,City,zipcode,password
                   
             }
             )
@@ -139,3 +137,5 @@ const Login = new mongoose.model("login",loginSchema);
 // createDocument();
 
 module.exports = createDocument;
+
+// module.exports = { createDocument };
