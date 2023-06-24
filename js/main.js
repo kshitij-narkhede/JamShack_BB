@@ -6,7 +6,7 @@ $(function(){
         enableAllSteps: true,
         transitionEffectSpeed: 500,
         labels: {
-            
+            finish:"Click on SUBMIT",
             next: "Forward",
             previous: "Backward"
         }

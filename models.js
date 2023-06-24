@@ -112,21 +112,12 @@ const Login = new mongoose.model("login",loginSchema);
 // const Order = new mongoose.model("product",ordersSchema);
 
 
- const createDocument  = async() => {
+ const createDocument  = async(firstname,lastname,email,phoneno,age,Address,City,zipcode,password) => {
     try{
 
         const user_login = new Login(
             {
-                email: "rutuja@gmail.com",
-                password:"123",
-                firstname:"Shark",
-                lastname:"Stark",
-                phoneno:"9865487515",
-                Address:"Gokul Nagar,Pune",
-                age:"19",
-                City:"Pune",
-                zipcode:"411046",
-                password:"Shark123",
+              firstname,lastname,email,phoneno,age,Address,City,zipcode,password
                   
             }
             )
