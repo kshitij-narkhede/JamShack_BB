@@ -73,9 +73,17 @@ const productSchema = new mongoose.Schema({
             
             const result = await products_details.save();
             console.log(result);
-    }catch(e){console.log(e);}
+    }catch(e){}
 }
 
 // createDocument();
 
 module.exports = createProduct;
+
+
+const getProduct = async() =>{
+  const result = await Product.find();
+  console.log(result);
+}
+
+getProduct();
