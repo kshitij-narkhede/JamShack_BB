@@ -2,140 +2,80 @@ const res = require("express/lib/response");
 const mongoose   = require("mongoose");
 const { ObjectId, Decimal128 } = require("mongodb");
 
-// const demandSchema=  new mongoose.Schema({
-//     u_id : ObjectId,
-//     model_name :String,
-//     color: String,
-//     warranty:Decimal128,
-//     size:{
-//         height: Int16Array,
-//         width:Int16Array,
-//         length:Int16Array,
-//     },
-//     physicalcondition:String,
-//     description:String,
-//     quantity:Int16Array,
-// })
-
-const loginSchema = new mongoose.Schema({
-  
-  "firstname": {
-    "type": "String"
-  },
-  "lastname": {
-    "type": "String"
-  },
-  "email": {
-    "type": "String"
-  },
-  "phoneno": {
-    "type": "String"
-  },
-  "age": {
-    "$numberInt": {
-      "type": "String"
-    }
-  },
-  "Address": {
-    "type": "String"
-  },
-  "City": {
-    "type": "String"
-  },
-  "zipcode": {
-    "type": "String"
-  },
-  "password": {
-    "type": "String"
-  },
-  "wishlist": {
-    "type": [
-      "Mixed"
-    ]
-  },
-  "orders": {
-    "type": [
-      "Mixed"
-    ]
-  },
-  "listings": {
-    "type": [
-      "Mixed"
-    ]
-  }
-})
-
-// const ordersSchema=new mongoose.Schema({
-//     p_id : ObjectId,
-// })
-
-// const wishlistSchema= new mongoose.Schema({
-//     p_id : ObjectId,
-// })
-
-// const listingSchema = new mongoose.Schema({
-//     p_id : ObjectId,
-// })
-
-// const productSchema = new mongoose.Schema({
-//     p_id : ObjectId,
-//     u_id : ObjectId,
-//     model_name : String,
-//     features: String,
-//     color : String,
-//     warranty : Decimal128,
-//     photosurl:{
-//         0:"https://unsplash.com/photos/JaiyYwT0hLA",
-//     },
-//     sell:Boolean,
-//     rent:Boolean,
-//     price:Int32Array,
-//     datelisting:Date,
-//     size:{
-//         height: Int16Array,
-//         width:Int16Array,
-//         length:Int16Array,
-//     },
-//     physicalcondition:String,
-// })
 
 
-// const Product = new mongoose.model("product",productSchema);
-// const Listing = new mongoose.model("listing",listingSchema);
-// const Demand = new mongoose.model("product",demandSchema);
-// const Wishlist = new mongoose.model("product",wishlistSchema);
-const Login = new mongoose.model("login",loginSchema);
-// const Order = new mongoose.model("product",ordersSchema);
+const productSchema = new mongoose.Schema({
+    model_name: {
+      type: String,
+      required: true
+    },
+    category: {
+      type: String,
+      required: true
+    },
+    physical_condition: {
+        type: String,
+        required: true
+      },
+      warranty: {
+        type: String,
+        required: true
+      },
+      date_of_purchase: {
+        type: String,
+        required: true
+      },
+      color: {
+        type: String,
+        required: true
+      },
+      dimension: {
+        type: String,
+        required: true
+      },
+      quantity: {
+        type: String,
+        required: true
+      },
+      price: {
+        type: String,
+        required: true
+      },
+      description: {
+        type: String,
+        required: true
+      }
+  });
 
 
- const createDocument  = async(firstname, lastname,email,phoneno,age,Address,City,zipcode,password) => {
+  const Product = new mongoose.model("products",productSchema);
+
+
+  const createProduct  = async(model_name, category,physical_condition,warranty,date_of_purchase,color,dimension,quantity,price,description) => {
     try{
 
-        const user_login = new Login(
+        const products_details = new Product(
             {
                 
-                // firstname:"Shark1",
-                // lastname:"Stark",
-                // email: "rutuja@gmail.com",
-                // phoneno:"9865487515",
-                // age:"19",
-                // Address:"Gokul Nagar,Pune",
-                
-                // City:"Pune",
-                // zipcode:"411046",
-                // password:"Shark123",
-                firstname, lastname,email,phoneno,age,Address,City,zipcode,password
+                "model_name":model_name,
+                "category":category,
+                "physical_condition": physical_condition,
+                "warranty":warranty,
+                "date_of_purchase":date_of_purchase,
+                "color":color,
+                "dimension":dimension,
+                "quantity":quantity,
+                "price":price,
+                "description":description,
                   
             }
             )
             
-            const result = await user_login.save();
+            const result = await products_details.save();
             console.log(result);
     }catch(e){console.log(e);}
 }
 
 // createDocument();
 
-module.exports = createDocument;
-
-// module.exports = { createDocument };
+module.exports = createProduct;
