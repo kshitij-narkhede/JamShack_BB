@@ -51,27 +51,11 @@ const productSchema = new mongoose.Schema({
   const Product = new mongoose.model("products",productSchema);
 
 
-<<<<<<< HEAD
-
-const Product = new mongoose.model("product",productSchema);
-const Listing = new mongoose.model("listing",listingSchema);
-const Demand = new mongoose.model("product",demandSchema);
-const Wishlist = new mongoose.model("product",wishlistSchema);
-const Login = new mongoose.model("login",loginSchema);
-// const Order = new mongoose.model("product",ordersSchema);
-
-
- const createDocument  = async(firstname,lastname,email,phoneno,age,Address,City,zipcode,password) => {
-=======
   const createProduct  = async(model_name, category,physical_condition,warranty,date_of_purchase,color,dimension,quantity,price,description) => {
->>>>>>> 9f0564bc4c38c81019e2371b1d9d02e6393014c8
     try{
 
         const products_details = new Product(
             {
-<<<<<<< HEAD
-              firstname,lastname,email,phoneno,age,Address,City,zipcode,password
-=======
                 
                 "model_name":model_name,
                 "category":category,
@@ -83,7 +67,6 @@ const Login = new mongoose.model("login",loginSchema);
                 "quantity":quantity,
                 "price":price,
                 "description":description,
->>>>>>> 9f0564bc4c38c81019e2371b1d9d02e6393014c8
                   
             }
             )
