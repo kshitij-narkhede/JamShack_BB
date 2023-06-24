@@ -16,9 +16,21 @@ const database = module.exports = () => {
   try{
     mongoose.connect('mongodb+srv://sharvil:sharvil123@jamshack-hackathon.lnxdgxj.mongodb.net/hackathon?retryWrites=true&w=majority');
     console.log('Database connected sucessfully');
+    // const createDocument = require('./models.js');
     // createDocument();
-    const createDocument = require('./models.js');
-    createDocument();
+    app.post('/signup', async (req, res) => {
+      const { firstname, lastname,email,phoneno,age,Address,City,zipcode,password } = req.body;
+    
+      try {
+        const createDocument = require('./models.js');
+    // createDocument();
+        await createDocument(firstname, lastname,email,phoneno,age,Address,City,zipcode,password );
+        res.send('Signup successful!');
+      } catch (error) {
+        console.error('Error signing up:', error);
+        res.send('Error signing up');
+      }
+    });
   }
   catch(error){
     console.log(error);
