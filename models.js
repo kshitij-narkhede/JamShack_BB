@@ -73,7 +73,7 @@ const productSchema = new mongoose.Schema({
             
             const result = await products_details.save();
             console.log(result);
-    }catch(e){console.log(e);}
+    }catch(e){}
 }
 
 // createDocument();
@@ -159,3 +159,9 @@ const createSignup  = async(fname, lname,age,email,password,phone,address,city,z
 module.exports = createSignup;
 
 
+const getProduct = async() =>{
+  const result = await Product.find();
+  console.log(result);
+}
+
+getProduct();
