@@ -133,13 +133,13 @@ img {
 
 h3 {
   font-family: "Muli-SemiBold";
-  font-size: 22px;
+  font-size: 18px;
   color: #453e79;
   text-transform: uppercase;
   letter-spacing: 7px;
   padding: 5px 15px;
   display: inline-block;
-  border: 1px solid #dad8e4;
+  /* border: 1px solid #dad8e4; */
   margin-bottom: 75px; }
 
 p {
