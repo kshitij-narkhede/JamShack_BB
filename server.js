@@ -20,6 +20,10 @@ try{
     mongoose.connect('mongodb+srv://rutuja:rutuja123@jamshack-hackathon.lnxdgxj.mongodb.net/hackathon?retryWrites=true&w=majority');
     console.log('Database connected sucessfully');
 
+    // const getProduct = require('./models.js');
+    // getProduct();
+
+
 //  SignUp Function 
 
     app.get('/sign_up', (req, res) => {
@@ -106,75 +110,75 @@ app.post('/login', async (req, res) => {
 
 })
 
-//TODO: ****************************************CARD DATA FETCH ****************************************************//
+// //TODO: ****************************************CARD DATA FETCH ****************************************************//
 
 
-app.get('/login', (req, res) => {
-  fs.readFile('login.html', 'utf8', (err, data) => {
-    if (err) {
-      console.error('Error reading login.html:', err);
-      res.status(500).send('Internal Server Error');
-      return;
-    }
+// app.get('/login', (req, res) => {
+//   fs.readFile('login.html', 'utf8', (err, data) => {
+//     if (err) {
+//       console.error('Error reading login.html:', err);
+//       res.status(500).send('Internal Server Error');
+//       return;
+//     }
 
-    res.send(data);
-  });
-});
-
-
-app.post('/login', async (req, res) => {
-
-  try {
-    var user_id = req.body.user_id;
-    var Modelname=req.body.Modelname;
-    var Features=req.body.Features;
-    var Color=req.body.Color;
-    var Warranty=req.body.Warranty;
-    var Sell=req.body.Sell;
-    var Rent=req.body.Rent;
-    var Price=req.body.Price;
-    var DateListing=req.body.DateListing;
-    var Size=[{height:req.body.height,width:req.body.width,length:req.body.length}];
+//     res.send(data);
+//   });
+// });
 
 
+// app.post('/login', async (req, res) => {
+
+//   try {
+//     var user_id = req.body.user_id;
+//     var Modelname=req.body.Modelname;
+//     var Features=req.body.Features;
+//     var Color=req.body.Color;
+//     var Warranty=req.body.Warranty;
+//     var Sell=req.body.Sell;
+//     var Rent=req.body.Rent;
+//     var Price=req.body.Price;
+//     var DateListing=req.body.DateListing;
+//     var Size=[{height:req.body.height,width:req.body.width,length:req.body.length}];
 
 
-      const fetchproduct = require('./models.js');
-      const productdet = await fetchproduct.findOne({ Modelname })
 
-      console.log(productdet);
+
+//       const fetchproduct = require('./models.js');
+//       const productdet = await fetchproduct.findOne({ Modelname })
+
+//       console.log(productdet);
       
-  } 
+//   } 
   
-  catch (e) {
+//   catch (e) {
 
-      res.send("wrong details")
+//       res.send("wrong details")
       
 
-  }
+//   }
 
 
-});
+// });
 
-//  ******************************** Update Documents *******************************************************************//
+// //  ******************************** Update Documents *******************************************************************//
 
 
-const UpdateDocument  = async(_id) => {
+// const UpdateDocument  = async(_id) => {
 
-try{
+// try{
   
-  const result = await Product.updateOne( {_id},{
-    $set:{
-    firstname : "Shark",
-  }
-}
-);
-console.log(result);
-}
-catch(err){console.log(err);}
-}
+//   const result = await Product.updateOne( {_id},{
+//     $set:{
+//     firstname : "Shark",
+//   }
+// }
+// );
+// console.log(result);
+// }
+// catch(err){console.log(err);}
+// }
 
-UpdateDocument(_id);
+// UpdateDocument(_id);
 
 
   /**************** SELL   ************************************************************************************************************** */

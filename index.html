@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="index.css">
-    <title> olx</title>
+    <title> Modish Trade</title>
     <link rel="icon" type="image/x-icon" href="/images/123.jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -32,40 +32,23 @@
                     <a href="sign_up.html" class="btn btn-secondary btn-lg active " style="left:900px;position: relative;" role="button"  aria-pressed="true">Sign-up</a>
                 </form>
                     <!-- Login Model -->
-                    <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog"  aria-labelledby="LoginModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                        <div class="modal-content" style="background-color: #AED5D2;">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id="LoginModalLabel">Login to ModishTrade</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            </div>
-                            <img src="images/logo.png" style="width: 150px;height: 100px;position: relative;left: 180px;top:50px;">
-                            <!-- <h1 style="position: relative;left: 140px;top: 70px;">ModishTrade</h1> -->
-                            <div class="container" style="height: 300px;width: 300px;margin-top: 100px;">
-                            
-                            <form action="/login" method="post">
-                                <div class="form-group">
-                                <label for="exampleInputEmail1">Email ID</label>
-                                <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email" style="display: block; background-color:  #ffffff;;border-radius: 16px;border-color: black;border-width: 2px;">
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                                </div>
-                                <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Your Password" style="display: block; background-color: #ffffff;border-radius: 16px;border-color: black;border-width: 2px;">
-                                </div>
-                                <button type="submit" style="background-color: azure;position: relative;left:95px; padding: 5px;border-radius: 16px;width: 100px;box-shadow: #696969;">Login</button>
-                            
-
-                            </form>
-                            </div>
-                            
-                        </div>
-                        </div>
-                    </div>
-
+                    <script>var number=1;
+                        function showvalue(){   
+                            console.log(number);
+                        }
+                        function showvalue1(){
+                            var number=0;
+                            console.log(number);
+                        }</script>
+                        <style>
+                            #switchbuy{
+                                width: 50px;
+                                position: relative;
+                            }
+                        </style>
+                      <button type" id="switchbuy" name="switch" value=1  onclick="showvalue()">BUY</button>
+                      <button type" id="switchrent" name="switch" value=0  onclick="showvalue1()">RENT</button>
+                       
     <!-- =============================== * navbar * ============================================ -->
                 <div style="background-color: #696969; padding: 10px;width: 100%;justify-content: space-between;">
                     <button class="btn btn-primary dropdown-toggle textButton"  type="button" data-bs-toggle="dropdown">
