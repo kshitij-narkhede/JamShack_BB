@@ -157,7 +157,7 @@ const createSignup  = async(fname, lname,age,email,password,phone,address,city,z
 // createDocument();
 
 module.exports = createSignup;
-
+module.exports = Signup;
 
 const getProduct = async() =>{
   const result = await Product.find();
