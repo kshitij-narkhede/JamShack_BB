@@ -15,12 +15,12 @@ const database = module.exports = () => {
       
     }
 }
-
+// Connection
 try{
     mongoose.connect('mongodb+srv://rutuja:rutuja123@jamshack-hackathon.lnxdgxj.mongodb.net/hackathon?retryWrites=true&w=majority');
     console.log('Database connected sucessfully');
 
-
+//  SignUp Function 
 
     app.get('/sign_up', (req, res) => {
       fs.readFile('sign_up.html', 'utf8', (err, data) => {
@@ -106,9 +106,75 @@ app.post('/login', async (req, res) => {
 
 })
 
+//TODO: ****************************************CARD DATA FETCH ****************************************************//
+
+
+app.get('/login', (req, res) => {
+  fs.readFile('login.html', 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading login.html:', err);
+      res.status(500).send('Internal Server Error');
+      return;
+    }
+
+    res.send(data);
+  });
+});
+
+
+app.post('/login', async (req, res) => {
+
+  try {
+    var user_id = req.body.user_id;
+    var Modelname=req.body.Modelname;
+    var Features=req.body.Features;
+    var Color=req.body.Color;
+    var Warranty=req.body.Warranty;
+    var Sell=req.body.Sell;
+    var Rent=req.body.Rent;
+    var Price=req.body.Price;
+    var DateListing=req.body.DateListing;
+    var Size=[{height:req.body.height,width:req.body.width,length:req.body.length}];
 
 
 
+
+      const fetchproduct = require('./models.js');
+      const productdet = await fetchproduct.findOne({ Modelname })
+
+      console.log(productdet);
+      
+  } 
+  
+  catch (e) {
+
+      res.send("wrong details")
+      
+
+  }
+
+
+});
+
+//  ******************************** Update Documents *******************************************************************//
+
+
+const UpdateDocument  = async(_id) => {
+
+try{
+  
+  const result = await Product.updateOne( {_id},{
+    $set:{
+    firstname : "Shark",
+  }
+}
+);
+console.log(result);
+}
+catch(err){console.log(err);}
+}
+
+UpdateDocument(_id);
 
 
   /**************** SELL   ************************************************************************************************************** */
@@ -229,3 +295,7 @@ database();
 app.listen(3000, () => {
 console.log("Server is running at port 3000");
 });
+
+
+
+// 
