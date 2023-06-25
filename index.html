@@ -28,7 +28,8 @@
                     <input type="search" class="search" placeholder="Search for Products...">
                     <button type="submit">Search</button>
                     <span class="glyphicon glyphicon-filter" style="left:300px"><b>Filter</b></span>
-                    <a href="login.html" class="btn btn-secondary btn-lg active " style="left:870px;position: relative;" role="button" data-toggle="modal" data-target="#LoginModal"  aria-pressed="true">Login</a>
+                    <!-- <a id="loginButton" href="login.html" class="btn btn-secondary btn-lg active " style="left:870px;position: relative;" role="button" data-toggle="modal" data-target="#LoginModal"  aria-pressed="true">Login</a> -->
+                    <button id="loginButton" style="left:870px;position: relative;" class="makeDeal">Login</button>
                     <a href="sign_up.html" class="btn btn-secondary btn-lg active " style="left:900px;position: relative;" role="button"  aria-pressed="true">Sign-up</a>
                 </form>
                     <!-- Login Model -->
@@ -386,12 +387,23 @@
     </div>
 
     <script>
-
-        //  =============================== * navbar * ============================================
-
-       
-
-    </script>
+        // Get a reference to the login button
+        const loginButton = document.getElementById('loginButton');
+      
+        // Add a click event listener to the button
+        loginButton.addEventListener('click', () => {
+          // Make a GET request to the '/login' route
+          fetch('/login')
+            .then(response => response.text())
+            .then(data => {
+              // Replace the current page content with the data from the '/login' route
+              document.documentElement.innerHTML = data;
+            })
+            .catch(error => {
+              console.error('Error fetching login page:', error);
+            });
+        });
+      </script>
 
 
 <script>

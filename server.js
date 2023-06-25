@@ -31,19 +31,51 @@ try{
     // getProduct();
 
 
-//**************** ERROR **********
+
+    app.get('/details/:id', (req, res) => {
+      const cardId = req.params.id; // Get the card ID from the route parameters
+    
+      const Product = require('./models.js');
+
+      // Fetch the card information from MongoDB using the cardId
+      Product.findById(cardId)
+        .exec()
+        .then(data => {
+          res.render('details', {
+            card: data
+          });
+        })
+        .catch(error => {
+          console.error('Error fetching card details:', error);
+          res.status(500).send('Internal Server Error');
+        });
+    });
+
+    
+
+
+
     const Product = require('./models.js');
 
-    app.get('/', (req, res) => {
-        Product.find({})
-    .exec()
-    .then(data => {
-      res.render('index', {
-        dataList: data
-      });
-    })
-  });
+  //   app.get('/', (req, res) => {
+  //       Product.find({})
+  //   .exec()
+  //   .then(data => {
+  //     res.render('index', {
+  //       dataList: data
+  //     });
+  //   })
+  // });
 
+  app.get('/demo', (req, res) => {
+    Product.find({})
+.exec()
+.then(data => {
+  res.render('demo', {
+    dataList: data
+  });
+})
+});
 
 //  SignUp Function 
 

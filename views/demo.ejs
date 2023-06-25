@@ -162,7 +162,25 @@
 
 
     <!-- =============================== * product * ============================================ -->
-    <div class="First_row" >
+    
+    <% dataList.forEach(data => { %>
+        <div class="box">
+          <a href="/details/<%= data._id %>"> <!-- Assuming '_id' is the field in your MongoDB document -->
+            <img class="cardimg" src="<%= data.photosurl %>">
+            <h2><%= data.price %></h2>
+            <p><%= data.model_name %></p>
+            <div class="address_data">
+              <p><%= data.address %></p>
+              <p>Today</p>
+            </div>
+            <div><button class="makeDeal">Make a Deal</button></div>
+          </a>
+        </div>
+      <% }) %>
+      
+    
+    
+    <!-- <div class="First_row" >
 
     <%dataList.forEach(data => {%>
         
@@ -183,7 +201,7 @@
     <%})%>
 
 
-</div>
+</div> -->
     
         <!-- <div class="First_row">
             
