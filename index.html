@@ -28,43 +28,11 @@
                     <input type="search" class="search" placeholder="Search for Products...">
                     <button type="submit">Search</button>
                     <span class="glyphicon glyphicon-filter" style="left:300px"><b>Filter</b></span>
-                    <a href="#" class="btn btn-secondary btn-lg active " style="left:870px;position: relative;" role="button" data-toggle="modal" data-target="#LoginModal"  aria-pressed="true">Login</a>
+                    <a href="login.html" class="btn btn-secondary btn-lg active " style="left:870px;position: relative;" role="button" data-toggle="modal" data-target="#LoginModal"  aria-pressed="true">Login</a>
                     <a href="sign_up.html" class="btn btn-secondary btn-lg active " style="left:900px;position: relative;" role="button"  aria-pressed="true">Sign-up</a>
                 </form>
                     <!-- Login Model -->
-                    <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog"  aria-labelledby="LoginModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                        <div class="modal-content" style="background-color: #AED5D2;">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id="LoginModalLabel">Login to ModishTrade</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            </div>
-                            <img src="images/logo.png" style="width: 150px;height: 100px;position: relative;left: 180px;top:50px;">
-                            <!-- <h1 style="position: relative;left: 140px;top: 70px;">ModishTrade</h1> -->
-                            <div class="container" style="height: 300px;width: 300px;margin-top: 100px;">
-                            
-                            <form action="/login" method="post">
-                                <div class="form-group">
-                                <label for="exampleInputEmail1">Email ID</label>
-                                <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email" style="display: block; background-color:  #ffffff;;border-radius: 16px;border-color: black;border-width: 2px;">
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                                </div>
-                                <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Your Password" style="display: block; background-color: #ffffff;border-radius: 16px;border-color: black;border-width: 2px;">
-                                </div>
-                                <button type="submit" style="background-color: azure;position: relative;left:95px; padding: 5px;border-radius: 16px;width: 100px;box-shadow: #696969;">Login</button>
-                            
-
-                            </form>
-                            </div>
-                            
-                        </div>
-                        </div>
-                    </div>
+                   
 
     <!-- =============================== * navbar * ============================================ -->
                 <div style="background-color: #696969; padding: 10px;width: 100%;justify-content: space-between;">
@@ -123,51 +91,26 @@
                         <a class="dropdown-item" href="#">Another action</a>
                         <a class="dropdown-item" href="#">Something else here</a>
                       </div>
-                      <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
-                     <style>input[type=checkbox]{
-                        height: 0;
-                        width: 0;
-                        visibility: hidden;
-                    }
-                    
-                    label {
-                        cursor: pointer;
-                        content: 'RENT';
-                        text-indent: -9999px;
-                        width: 85px;
-                        height: 40px;
-                        background: rgb(185, 42, 42);
-                        display: block;
-                        border-radius: 100px;
-                        position: fixed;
-                        left: 1350px;
-                        top:65px;
-                    }
-                    
-                    label:after {
-                        content: 'BUY';
-                        position: fixed;
-                        top: 70px;
-                        left: 1355px;
-                        width: 30px;
-                        height: 30px;
-                        background: #fff;
-                        border-radius: 90px;
-                        transition: 0.3s;
-                    }
-                    
-                    input:checked + label {
-                        background: #de3de6;
-                    }
-                    
-                    input:checked + label:after {
-                        left: calc(100% - 90px);
-                        transform: translateX(-100%);
-                    }
-                    
-                    label:active:after {
-                        width: 45px;
-                    }</style>
+                      
+                        <script>var number=1;
+                        function showvalue(){   
+                            console.log(number);
+                        }
+                        function showvalue1(){
+                            var number=0;
+                            console.log(number);
+                        }</script>
+                        <style>
+                            #switchbuy{
+                                width: 50px;
+                                position: relative;
+                            }
+                        </style>
+                      <button type" id="switchbuy" name="switch" value=1  onclick="showvalue()">BUY</button>
+                      <button type" id="switchrent" name="switch" value=0  onclick="showvalue1()">RENT</button>
+                       
+                        
+                     
                 </div>
     
             
