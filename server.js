@@ -1,8 +1,9 @@
 // const express = require('express');
 const bodyParser = require('body-parser');
-// // const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 // const mongoose = require('mongoose');
-// const fs = require('fs');
+const fs = require('fs');
+const path=require('path');
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -11,6 +12,7 @@ const { kStringMaxLength } = require('buffer');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(__dirname + '/public/'));
 
 app.set('view engine', 'ejs');
 const database = module.exports = () => {
@@ -334,7 +336,7 @@ catch(error){
 
 database();
 
-app.listen(3000, () => {
+app.listen(5050, () => {
 console.log("Server is running at port 3000");
 });
 
