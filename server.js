@@ -25,6 +25,20 @@ try{
     // getProduct();
 
 
+//**************** ERROR **********
+  //   const Product = require('./models.js');
+
+  //   app.get('/', (req, res) => {
+  //       Product.find({})
+  //   .exec()
+  //   .then(data => {
+  //     res.render('index', {
+  //       dataList: data
+  //     });
+  //   })
+  // });
+
+
 //  SignUp Function 
 
     app.get('/sign_up', (req, res) => {

@@ -36,9 +36,9 @@ try{
     app.get('/', (req, res) => {
         Product.find({})
     .exec()
-    .then(movies => {
+    .then(data => {
       res.render('index', {
-        moviesList: movies
+        dataList: data
       });
     })
     
