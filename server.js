@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 // const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 const fs = require('fs');
+const multer = require('multer');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,6 +20,10 @@ const database = module.exports = () => {
 try{
     mongoose.connect('mongodb+srv://rutuja:rutuja123@jamshack-hackathon.lnxdgxj.mongodb.net/hackathon?retryWrites=true&w=majority');
     console.log('Database connected sucessfully');
+
+    // const getProduct = require('./models.js');
+    // getProduct();
+
 
 //  SignUp Function 
 
@@ -106,75 +111,75 @@ app.post('/login', async (req, res) => {
 
 })
 
-//TODO: ****************************************CARD DATA FETCH ****************************************************//
+// //TODO: ****************************************CARD DATA FETCH ****************************************************//
 
 
-app.get('/login', (req, res) => {
-  fs.readFile('login.html', 'utf8', (err, data) => {
-    if (err) {
-      console.error('Error reading login.html:', err);
-      res.status(500).send('Internal Server Error');
-      return;
-    }
+// app.get('/login', (req, res) => {
+//   fs.readFile('login.html', 'utf8', (err, data) => {
+//     if (err) {
+//       console.error('Error reading login.html:', err);
+//       res.status(500).send('Internal Server Error');
+//       return;
+//     }
 
-    res.send(data);
-  });
-});
-
-
-app.post('/login', async (req, res) => {
-
-  try {
-    var user_id = req.body.user_id;
-    var Modelname=req.body.Modelname;
-    var Features=req.body.Features;
-    var Color=req.body.Color;
-    var Warranty=req.body.Warranty;
-    var Sell=req.body.Sell;
-    var Rent=req.body.Rent;
-    var Price=req.body.Price;
-    var DateListing=req.body.DateListing;
-    var Size=[{height:req.body.height,width:req.body.width,length:req.body.length}];
+//     res.send(data);
+//   });
+// });
 
 
+// app.post('/login', async (req, res) => {
+
+//   try {
+//     var user_id = req.body.user_id;
+//     var Modelname=req.body.Modelname;
+//     var Features=req.body.Features;
+//     var Color=req.body.Color;
+//     var Warranty=req.body.Warranty;
+//     var Sell=req.body.Sell;
+//     var Rent=req.body.Rent;
+//     var Price=req.body.Price;
+//     var DateListing=req.body.DateListing;
+//     var Size=[{height:req.body.height,width:req.body.width,length:req.body.length}];
 
 
-      const fetchproduct = require('./models.js');
-      const productdet = await fetchproduct.findOne({ Modelname })
 
-      console.log(productdet);
+
+//       const fetchproduct = require('./models.js');
+//       const productdet = await fetchproduct.findOne({ Modelname })
+
+//       console.log(productdet);
       
-  } 
+//   } 
   
-  catch (e) {
+//   catch (e) {
 
-      res.send("wrong details")
+//       res.send("wrong details")
       
 
-  }
+//   }
 
 
-});
+// });
 
-//  ******************************** Update Documents *******************************************************************//
+// //  ******************************** Update Documents *******************************************************************//
 
 
-const UpdateDocument  = async(_id) => {
+// const UpdateDocument  = async(_id) => {
 
-try{
+// try{
   
-  const result = await Product.updateOne( {_id},{
-    $set:{
-    firstname : "Shark",
-  }
-}
-);
-console.log(result);
-}
-catch(err){console.log(err);}
-}
+//   const result = await Product.updateOne( {_id},{
+//     $set:{
+//     firstname : "Shark",
+//   }
+// }
+// );
+// console.log(result);
+// }
+// catch(err){console.log(err);}
+// }
 
-UpdateDocument(_id);
+// UpdateDocument(_id);
 
 
   /**************** SELL   ************************************************************************************************************** */
@@ -238,12 +243,30 @@ UpdateDocument(_id);
     //     `);
     //   });
 
+    const multer = require('multer')
+    const path = require('path')
+    var router = express.Router();
+
+    router.use(express.static(__dirname+'./public/'));
+
+    var Storage = multer.diskStorage({
+      destination:"./public/users",
+      filename:(req,file,cb) =>{ 
+        cb(null,file.fieldname+"_"+Date.now()+path.extname(file.originalname));
+       }
+    })
+
+
+    var upload  = multer({
+      storage:Storage
+    }).single('photos')
+
 
     app.get('/sell', (req, res) => {
         fs.readFile('sellform.html', 'utf8', (err, data) => {
           if (err) {
             console.error('Error reading sellform.html:', err);
-            res.status(500).send('Internal Server Error');
+            res.status(5000).send('Internal Server Error');
             return;
           }
       
@@ -252,7 +275,7 @@ UpdateDocument(_id);
       });
 
 
-    app.post('/sell', async (req, res) => {
+    app.post('/sell',upload,async (req, res,next) => {
         // const { model_name, category,physical_condition,warranty,date_of_purchase,color,dimension,quantity,price,description } = req.body;
       
         var model_name = req.body.model_name;
@@ -265,12 +288,13 @@ UpdateDocument(_id);
         var quantity =req.body.quantity;
         var price = req.body.price;
         var description =req.body.description;
-
+        var photosurl = req.file.filename;
+        var sellorrent = req.body.sellorrent;
 
         try {
           
             const createProduct = require('./models.js');
-            createProduct(model_name, category,physical_condition,warranty,date_of_purchase,color,dimension,quantity,price,description);
+            createProduct(model_name, category,physical_condition,warranty,date_of_purchase,color,dimension,quantity,price,description,photosurl,sellorrent);
       
           res.send('Signup successful!');
         } catch (error) {
@@ -292,8 +316,8 @@ catch(error){
 
 database();
 
-app.listen(3000, () => {
-console.log("Server is running at port 3000");
+app.listen(5050, () => {
+console.log("Server is running at port 5000");
 });
 
 
