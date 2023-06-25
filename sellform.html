@@ -94,7 +94,7 @@
     font-size: 5vh;
   }
 
-  .inputstyle{
+  .inputstyle box{
     border-radius: 3vh;
     box-shadow:1vh 1vh grey;
   }
@@ -114,110 +114,103 @@
 
 
 </head>
-<body>
-
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-    Sell
-</button> -->
-
-<!-- Modal -->
- <!-- <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-
-    <div class="modal-dialog" role="document">
-        <div class="modal-content" style="background-color: #AED5D2; font-size: 2.5vh;">
-            <div class="modal-header">
-                <div class="sellheader">
-                    <img class="logo img-fluid" src="images/logo.png">
-                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Sell Form</b></h5>
-
-                </div>
-                
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body"> 
-
-                <div class="container"> -->
+<body style="background-color: bisque;">
 
 
+<!-- <br>
+	<br>
+	<br>
+	<div class="container" style="background-color: bisque;">
+		<div class="row">
+		<div class="col-md-3">
+					
+		</div>
+				
+		<div class="col-md-6 main" style="background-color: #AED5D2;"> -->
 
-                    <form method="POST" action="/sell">
+
+      <style>.box{
+				border-radius: 16px;box-shadow: #696969;
+			}</style>
+                    <form method="POST" action="/sell" enctype="multipart/form-data">
+                      <img src="images/logo.png" style="position: relative;left:200px;width: 150px;height:100px;box-shadow: #696969;border-radius: 16px;">
+                      <h2 style="position: relative; left:160px">Create Your Ad</h2>
                         <label for="model">Model Name:</label>
-                        <input class="inputstyle" type="text" id="model" name="model_name" required ><br>
+                        <input class="inputstyle box" type="text" id="model" name="model_name" required ><br>
                 
                         <label for="category">Category:</label>
-                        <select class="inputstyle" id="category" name="category" required>
+                        <select class="inputstyle box" id="category" name="category" required>
                             <option value="category1">Category 1</option>
                             <option value="category2">Category 2</option>
                             <option value="category3">Category 3</option>
                         </select><br><br>
                 
                         <label for="condition">Physical Condition:</label>
-                        <select class="inputstyle" id="condition" name="physical_condition" required>
+                        <select class="inputstyle box" id="condition" name="physical_condition" required>
                             <option value="new">New</option>
                             <option value="used">Used</option>
                             <option value="refurbished">Refurbished</option>
                         </select><br><br>
                 
                         <label for="warranty">Warranty Status:</label>
-                        <select class="inputstyle" id="warranty" name="warranty" required>
+                        <select class="inputstyle box" id="warranty" name="warranty" required>
                             <option value="underWarranty">Under Warranty</option>
                             <option value="outOfWarranty">Out of Warranty</option>
                             <option value="noWarranty">No Warranty</option>
                         </select><br><br>
                 
                         <label for="year">Date of Purchase:</label>
-                        <input class="inputstyle" type="text" id="datepicker" name="date_of_purchase" required><br><br>
+                        <input class="inputstyle box" type="text" id="datepicker" name="date_of_purchase" required><br><br>
                 
                         <label for="color">Color:</label>
-                        <input class="inputstyle" type="text" id="color" name="color" required><br><br>
+                        <input class="inputstyle box" type="text" id="color" name="color" required><br><br>
                 
                         <label for="dimension">Dimensions:</label>
-                        <input class="inputstyle" type="text" id="dimension" name="dimension" required><br><br>
-                
+                        <input class="inputstyle box" type="text" id="dimension" name="dimension" required><br><br>
+                        <label for="photos">Photos:</label>
+                        <input type="file" class="box" id="photos" name="photos" required><br><br>
+                         <img src ="./public/users/">
+                         <label for="sellRent">Sell/Rent:</label>
+                        <select class="box" id="sellRent" name="sellRent" value="sell" required>
+                          <option value="Sell">Sell</option>
+                            <option value="Rent">Rent</option>
+                            <option value="Donate">Donate</option>
+                        </select>
+                        <br><br>
+                <div style="position: relative;top:-100px;">
                         <label for="quantity">Quantity:</label>
-                        <input class="inputstyle" type="text" id="quantity" name="quantity" step="1" required><br><br>
-                
-                        <!-- <label for="photos">Photos:</label>
-                        <input type="file" id="photos" name="photos" required><br><br> -->
-                
-                        <!-- <label for="sellRent">Sell/Rent:</label>
-                        <input type="radio" id="sell" name="sellRent" value="sell" required>
-                        <label for="sell">Sell</label>
-                        <input type="radio" id="rent" name="sellRent" value="rent" required>
-                        <label for="rent">Rent</label><br><br> -->
-                
+                        <input class="inputstyle box" type="text" id="quantity" name="quantity" step="1" required><br><br>
                         <label for="price">Price:</label>
-                        <input class="inputstyle" type="text" id="price" name="price" required><br><br>
+                        <input class="inputstyle box" type="text" id="price" name="price" required><br><br>
                 
                         <label for="description">Description:</label>
-                        <input class="inputstyle" type="text" id="description" name="description" required><br>
+                        <input class="inputstyle box" type="text" id="description" name="description" required><br>
                 
                         <input type="submit" class="btn" value="Submit">
+                      </div>
                     </form>
+                  </div> 
+				
+				
+                  <div class="col-md-3">
+                  </div>
+                      
+                </div>
+                </div>
 
 
 
 
-                <!-- </div>
-                
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                
-            </div>
-        </div>
-    </div>
-</div> -->
+              </div> -->
+                  <!-- 
+
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>-->
 
 
 </body>

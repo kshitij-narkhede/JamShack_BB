@@ -44,6 +44,13 @@ const productSchema = new mongoose.Schema({
       description: {
         type: String,
         required: true
+      },
+      photosurl:{
+        type: String,
+      },
+
+      sellorrent :{
+        type : String,
       }
   });
 
@@ -53,7 +60,7 @@ const productSchema = new mongoose.Schema({
   const Product = new mongoose.model("products",productSchema);
 
 
-  const createProduct  = async(model_name, category,physical_condition,warranty,date_of_purchase,color,dimension,quantity,price,description) => {
+  const createProduct  = async(model_name, category,physical_condition,warranty,date_of_purchase,color,dimension,quantity,price,description,photosurl,sellorrent) => {
     try{
 
         const products_details = new Product(
@@ -69,7 +76,8 @@ const productSchema = new mongoose.Schema({
                 "quantity":quantity,
                 "price":price,
                 "description":description,
-                  
+                  "photosurl" : photosurl,
+                  "sellorrent":sellorrent,
             }
             )
             
@@ -127,14 +135,20 @@ module.exports = Product;
 //     },
     
 // });
+// });
 
 
+// const Signup = new mongoose.model("logins",signupSchema);
 // const Signup = new mongoose.model("logins",signupSchema);
 
 
 // const createSignup  = async(fname, lname,age,email,password,phone,address,city,zipcode) => {
 //   try{
+// const createSignup  = async(fname, lname,age,email,password,phone,address,city,zipcode) => {
+//   try{
 
+//       const signup_details = new Signup(
+//           {
 //       const signup_details = new Signup(
 //           {
               
@@ -147,7 +161,18 @@ module.exports = Product;
 //               "address":address,
 //               "city":city,
 //               "zipcode":zipcode,
+//               "fname":fname,
+//               "lname":lname,
+//               "age": age,
+//               "email":email,
+//               "password":password,
+//               "phone":phone,
+//               "address":address,
+//               "city":city,
+//               "zipcode":zipcode,
                 
+//           }
+//           )
 //           }
 //           )
           
@@ -155,9 +180,16 @@ module.exports = Product;
 //           console.log(result);
 //   }catch(e){console.log(e);}
 // }
+//           const result = await signup_details.save();
+//           console.log(result);
+//   }catch(e){console.log(e);}
+// }
 
 // // createDocument();
+// // createDocument();
 
+// module.exports = createSignup;
+// module.exports = Signup;
 // module.exports = createSignup;
 // module.exports = Signup;
 
@@ -165,5 +197,10 @@ module.exports = Product;
 // //   const result = await Product.find();
 // //   console.log(result);
 // // }
+// // const getProduct = async() =>{
+// //   const result = await Product.find();
+// //   console.log(result);
+// // }
 
+// // module.exports =getProduct;
 // // module.exports =getProduct;

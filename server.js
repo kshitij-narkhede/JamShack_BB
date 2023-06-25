@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 // const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 const fs = require('fs');
+const multer = require('multer');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -242,12 +243,30 @@ app.post('/login', async (req, res) => {
     //     `);
     //   });
 
+    const multer = require('multer')
+    const path = require('path')
+    var router = express.Router();
+
+    router.use(express.static(__dirname+'./public/'));
+
+    var Storage = multer.diskStorage({
+      destination:"./public/users",
+      filename:(req,file,cb) =>{ 
+        cb(null,file.fieldname+"_"+Date.now()+path.extname(file.originalname));
+       }
+    })
+
+
+    var upload  = multer({
+      storage:Storage
+    }).single('photos')
+
 
     app.get('/sell', (req, res) => {
         fs.readFile('sellform.html', 'utf8', (err, data) => {
           if (err) {
             console.error('Error reading sellform.html:', err);
-            res.status(500).send('Internal Server Error');
+            res.status(5000).send('Internal Server Error');
             return;
           }
       
@@ -256,7 +275,7 @@ app.post('/login', async (req, res) => {
       });
 
 
-    app.post('/sell', async (req, res) => {
+    app.post('/sell',upload,async (req, res,next) => {
         // const { model_name, category,physical_condition,warranty,date_of_purchase,color,dimension,quantity,price,description } = req.body;
       
         var model_name = req.body.model_name;
@@ -269,12 +288,13 @@ app.post('/login', async (req, res) => {
         var quantity =req.body.quantity;
         var price = req.body.price;
         var description =req.body.description;
-
+        var photosurl = req.file.filename;
+        var sellorrent = req.body.sellorrent;
 
         try {
           
             const createProduct = require('./models.js');
-            createProduct(model_name, category,physical_condition,warranty,date_of_purchase,color,dimension,quantity,price,description);
+            createProduct(model_name, category,physical_condition,warranty,date_of_purchase,color,dimension,quantity,price,description,photosurl,sellorrent);
       
           res.send('Signup successful!');
         } catch (error) {
@@ -296,8 +316,8 @@ catch(error){
 
 database();
 
-app.listen(3000, () => {
-console.log("Server is running at port 3000");
+app.listen(5050, () => {
+console.log("Server is running at port 5000");
 });
 
 
