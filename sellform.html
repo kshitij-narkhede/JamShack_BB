@@ -132,7 +132,7 @@
       <style>.box{
 				border-radius: 16px;box-shadow: #696969;
 			}</style>
-                    <form method="POST" action="/sell">
+                    <form method="POST" action="/sell" enctype="multipart/form-data">
                       <img src="images/logo.png" style="position: relative;left:200px;width: 150px;height:100px;box-shadow: #696969;border-radius: 16px;">
                       <h2 style="position: relative; left:160px">Create Your Ad</h2>
                         <label for="model">Model Name:</label>
@@ -169,13 +169,14 @@
                         <input class="inputstyle box" type="text" id="dimension" name="dimension" required><br><br>
                         <label for="photos">Photos:</label>
                         <input type="file" class="box" id="photos" name="photos" required><br><br>
-                
-                        <label for="sellRent">Sell/Rent:</label>
-                        <select class="inputstyle box" id="category" name="category" required>
-                          <option value="category1">Category 1</option>
-                          <option value="category2">Category 2</option>
-                          <option value="category3">Category 3</option>
-                      </select><br><br>
+                         <img src ="./public/users/">
+                         <label for="sellRent">Sell/Rent:</label>
+                        <select class="box" id="sellRent" name="sellRent" value="sell" required>
+                          <option value="Sell">Sell</option>
+                            <option value="Rent">Rent</option>
+                            <option value="Donate">Donate</option>
+                        </select>
+                        <br><br>
                 <div style="position: relative;top:-100px;">
                         <label for="quantity">Quantity:</label>
                         <input class="inputstyle box" type="text" id="quantity" name="quantity" step="1" required><br><br>
@@ -188,7 +189,7 @@
                         <input type="submit" class="btn" value="Submit">
                       </div>
                     </form>
-                  <!-- </div>
+                  </div> 
 				
 				
                   <div class="col-md-3">

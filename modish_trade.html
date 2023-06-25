@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <title> Modish Trade</title>
+    <link rel="icon" type="image/x-icon" href="/images/123.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <div class="mainBody">
+    <div class="header1">
+<form action="">
+    <div class="cont" style="color:black">
+        <img class="logo" src="images/logo.png">
+        <input type="search" class="search" placeholder="Search for Products...">
+        <button type="submit">Search</button>
+        <span class="glyphicon glyphicon-filter" style="left:30vh"><b>Filter</b></span>
+        <a href="#" style="padding: 0 3vh;padding-left: 65vh; color: black;">Wishlist</a>
+                    <a  href="#" style="padding: 0 3vh; color: black">Your Listing</a>
+                    <a  href="#" style="padding: 0 3vh; color: black">Your Orders</a>
+                    <button class="btn " type="button" style="background-color:#01404F;color: white; margin-left: 8vh;">Demand a product</button>
+                    <i class="fa fa-user" style="color:black;margin-left: 8vh;"></i>
+    </div>
+           
+                    
+</form>
+                   
+
+    <!-- =============================== * navbar * ============================================ -->
+                <div style="background-color: #696969; padding: 10px;width: 100%;justify-content: space-between;">
+                    <button class="btn btn-primary dropdown-toggle textButton"  type="button" data-bs-toggle="dropdown">
+                        Mobile Phones
+                         
+                      </button>
+                      <style>
+                        .textButton {
+                            background: none;
+                            border: none;
+                        }
+                 
+                        #textButton:hover {
+                            background-color: green;
+                        }
+                    </style>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                      <button class="btn btn-primary dropdown-toggle textButton" type="button" data-bs-toggle="dropdown">
+                        Electronic Appliances
+                        
+                      </button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                      <button class="btn btn-primary dropdown-toggle textButton" type="button" data-bs-toggle="dropdown">
+                        Bikes and Cars
+                        
+                      </button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                      <button class="btn btn-primary dropdown-toggle textButton" type="button" data-bs-toggle="dropdown">
+                        Furniture
+                        
+                      </button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                      <button class="btn btn-primary dropdown-toggle textButton" type="button" data-bs-toggle="dropdown">
+                        Books,Sports and Hobbies
+                       
+                      </button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                      <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
+                     <style>input[type=checkbox]{
+                        height: 0;
+                        width: 0;
+                        visibility: hidden;
+                    }
+                    
+                    label {
+                        cursor: pointer;
+                        content: 'RENT';
+                        text-indent: -9999px;
+                        width: 85px;
+                        height: 40px;
+                        background: rgb(185, 42, 42);
+                        display: block;
+                        border-radius: 100px;
+                        position: fixed;
+                        left: 1350px;
+                        top:65px;
+                    }
+                    
+                    label:after {
+                        content: 'BUY';
+                        position: fixed;
+                        top: 70px;
+                        left: 1355px;
+                        width: 30px;
+                        height: 30px;
+                        background: #fff;
+                        border-radius: 90px;
+                        transition: 0.3s;
+                    }
+                    
+                    input:checked + label {
+                        background: #de3de6;
+                    }
+                    
+                    input:checked + label:after {
+                        left: calc(100% - 90px);
+                        transform: translateX(-100%);
+                    }
+                    
+                    label:active:after {
+                        width: 45px;
+                    }</style>
+                </div>
+    
+            
+        
+    </div>
+    <!-- =============================== * ad 1 * ============================================ -->
+<!-- Crousal -->
+<div id="carouselExample" class="carousel slide" style="width: 1475px; height:550px;   margin-bottom: 15px;margin-left: 25px;margin-right: 25px;">
+    <div class="carousel-inner " >
+      <div class="carousel-item active">
+        <img src="images/127.png" class="d-block w-100"  alt="..." style="height:555px;border-radius: 20px;">
+      </div>
+      <div class="carousel-item">
+        <img src="images/128.png" class="d-block w-100"  alt="..." style="height:555px;border-radius: 20px;">
+      </div>
+      <div class="carousel-item">
+            <img src="images/126.png" class="d-block w-100" alt="..." style="height:555px;border-radius: 20px;">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="product">
+  <div class="heading2"><h1>BUY SELL DEMAND</h1></div>
+  <div class="recommText"><p><h3>Our Recommendations: </h3></p></div>
+
+
+
+
+    <!-- =============================== * product * ============================================ -->
+
+
+    
+        <div class="First_row">
+            <div class="box">
+                <a href="product_olx.html">
+                    <img class="cardimg" src="images/123.jpg">
+                    <h2>₹3,500</h2>
+                    <p>Mi TV Stick</p>
+                    <div class="addres_data">
+                        <p>Bandra East, Mumbai</p>
+                        <p>Today</p>
+                    </div>
+                    <div><Button class="makeDeal">Make a Deal</Button></div>
+                </a>
+            </div>
+            <div class="box">
+                <img class="cardimg" src="images/123.jpg">
+                <h2> ₹4800 </h2>
+                <p> xbox one s</p>
+                <div class="addres_data">
+                    <p>CHEMBUR, MUMBAI</p>
+                    <p> JUL 27</p>
+                </div>
+                <div><Button class="makeDeal">Make a Deal</Button></div>
+            </div>
+            <div class="box">
+                <img class="cardimg" src="images/123.jpg">
+                <h2> ₹7000</h2>
+                <p> Refrigerator</p>
+                <div class="addres_data">
+                    <p>DHARAVI, MUMBAI</p>
+                    <p> Today </p>
+                </div>
+                <div><Button class="makeDeal">Make a Deal</Button></div>
+            </div>
+            <div class="box">
+                <img class="cardimg" src="images/123.jpg">
+                <h2> ₹8,00,000 </h2>
+                <p> Mitsubishi Pajero (2012) </p>
+                <div class="addres_data">
+                    <p>VERSOVA, MUMBAI</p>
+                    <p> Today </p>
+                </div>
+                <div><Button class="makeDeal">Make a Deal</Button></div>
+            </div>
+        </div>
+
+
+
+        <div class="First_row">
+            <div class="box">
+                <img class="cardimg" src="images/123.jpg">
+                <h2> ₹800 </h2>
+                <p> Black Jeans for man</p>
+                <div class="addres_data">
+                    <p>BORIVALI WEST, MUMBAI</p>
+                    <p> DEC 24 </p>
+                </div>
+                <div><Button class="makeDeal">Make a Deal</Button></div>
+            </div>
+            <div class="box">
+                <img class="cardimg" src="images/123.jpg">
+                <h2> ₹3,000 </h2>
+                <p> Pricise corrom board</p>
+                <div class="addres_data">
+                    <p>IC COLONY, MUMBAI</p>
+                    <p> JAN 29 </p>
+                </div>
+                <div><Button class="makeDeal">Make a Deal</Button></div>
+            </div>
+            <div class="box">
+                <img class="cardimg" src="images/123.jpg">
+                <h2> ₹3,800 </h2>
+                <p> CrossBeat Torq Buds</p>
+                <div class="addres_data">
+                    <p>DHARAVI, MUMBAI</p>
+                    <p> Today </p>
+                </div>
+                <div><Button class="makeDeal">Make a Deal</Button></div>
+            </div>
+            <div class="box">
+                <img class="cardimg" src="images/123.jpg">
+                <h2> ₹39,000 </h2>
+                <p> Nikon D7000 DSLR camera </p>
+                <div class="addres_data">
+                    <p>ANDHERI WEST, MUMBAI</p>
+                    <p> FEB 02 </p>
+                </div>
+                <div><Button class="makeDeal">Make a Deal</Button></div>
+            </div>
+        </div>
+
+
+
+
+        <div class="First_row">
+            <div class="box">
+                <img class="cardimg" src="images/123.jpg">
+                <h2> ₹400 </h2>
+                <p> Black jacket</p>
+                <div class="addres_data">
+                    <p>KANDIVALI WEST, MUMBAI</p>
+                    <p> FEB 11 </p>
+                    
+                </div>
+                <div><Button class="makeDeal">Make a Deal</Button></div>
+                
+            </div>
+            <div class="box">
+                <img class="cardimg" src="images/123.jpg">
+                <h2> ₹3,400 </h2>
+                <p> LG Washing machine </p>
+                <div class="addres_data">
+                    <p>SANTACRUZ EAST, MUMBAI</p>
+                    <p> Today </p>
+                </div>
+                <div><Button class="makeDeal">Make a Deal</Button></div>
+            </div>
+            <div class="box">
+                <img class="cardimg" src="images/123.jpg">
+                <h2> ₹700 </h2>
+                <p> Running Shoe (athletes) </p>
+                <div class="addres_data">
+                    <p>BANDRA EAST, MUMBAI</p>
+                    <p> FEB 25 </p>
+                </div>
+                <div><Button class="makeDeal">Make a Deal</Button></div>
+            </div>
+            <div class="box">
+                <img class="cardimg" src="images/123.jpg">
+                <h2> ₹35,000 </h2>
+                <p> Antique premium teak wood Sofa set </p>
+                <div class="addres_data">
+                    <p>Bandra East, Mumbai</p>
+                    <p> Today </p>
+                </div>
+                <div><Button class="makeDeal">Make a Deal</Button></div>
+            </div>
+        </div>
+
+
+
+        <div class="First_row">
+            <div class="box">
+                <img class="cardimg" src="images/123.jpg">
+                <h2> ₹3,35,000 </h2>
+                <p> Hyundai I20 (2010)</p>
+                <div class="addres_data">
+                    <p>KHAR EAST, MUMBAI</p>
+                    <p> JAN 14 </p>
+                </div>
+                <div><Button class="makeDeal">Make a Deal</Button></div>
+            </div>
+            <div class="box">
+                <img class="cardimg" src="images/123.jpg">
+                <h2> ₹6,000 </h2>
+                <p> dining table</p>
+                <div class="addres_data">
+                    <p>DADAR WEST, MUMBAI</p>
+                    <p> JUN 10</p>
+                </div>
+                <div><Button class="makeDeal">Make a Deal</Button></div>
+            </div>
+            <div class="box">
+                <img class="cardimg" src="images/123.jpg">
+                <h2> ₹1,200 </h2>
+                <p> Mens fastrack watch </p>
+                <div class="addres_data">
+                    <p>KURLA EAST, MUMBAI</p>
+                    <p> JAN 7 </p>
+                </div>
+                <div><Button class="makeDeal">Make a Deal</Button></div>
+            </div>
+            <div class="box">
+                <img class="cardimg" src="images/123.jpg">
+                <h2> ₹2,100 </h2>
+                <p> Pure Metal Dumbbells</p>
+                <div class="addres_data">
+                    <p>Bandra East, Mumbai</p>
+                    <p> Today </p>
+                </div>
+                <div><Button class="makeDeal">Make a Deal</Button></div>
+            </div>
+        </div>
+
+    </div>
+    <!-- =============================== * footer * ============================================ -->
+
+
+
+    <div class="Main_footer">
+        <div class="footer">
+            <div class="footer_box">
+                <h2>POPULAR LOCATIONS</h2>
+                <p> Kolkata</p>
+                <p>Mumbai</p>
+                <p>Chennai</p>
+                <p>pune</p>
+            </div>
+            <div class="footer_box">
+                <h2>TRENDING LOCATIONS</h2>
+                <p> Bhubaneshwar</p>
+                <p>Hyderabad</p>
+                <p>Chandigarh</p>
+                <p>Nashik</p>
+            </div>
+            <div class="footer_box">
+                <h2>ABOUT US</h2>
+                <p> About OLX Group</p>
+                <p>Careers</p>
+                <p>Contact Us</p>
+                <p>OLXPeople</p>
+            </div>
+            <div class="footer_box">
+                <h2>OLX</h2>
+                <p> Help</p>
+                <p>Legal & Privacy information</p>
+                <p>Blog</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        //  =============================== * navbar * ============================================
+
+       
+
+    </script>
+
+
+<script>
+    function openSignupModal() {
+      // Use JavaScript to open the modal or redirect to the signup modal URL
+      window.location.href = "/sign_up";
+    }
+  </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</div>
+</body>
+
+</html>
