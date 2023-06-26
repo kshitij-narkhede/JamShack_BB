@@ -421,7 +421,7 @@ catch(error){
 
 database();
 
-app.listen(5050, () => {
+app.listen(3000, () => {
 console.log("Server is running at port 5050");
 });
 
