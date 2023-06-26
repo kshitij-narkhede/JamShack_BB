@@ -34,7 +34,7 @@ const stripe = require('stripe')(Secret_Key)
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs');
 
-app.get('/', function(req, res){
+app.get('/payment_gateway', function(req, res){
   res.render('home', {
      key: Publishable_Key
   })
@@ -318,8 +318,8 @@ catch(error){
 
 database();
 
-app.listen(3000, () => {
-console.log("Server is running at port 5050");
+app.listen(8080, () => {
+console.log("Server is running at port 3000");
 });
 
 }); 
