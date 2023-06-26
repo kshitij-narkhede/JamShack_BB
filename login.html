@@ -11,7 +11,7 @@ integrity=
 "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 crossorigin="anonymous">	
 		
-<link rel="stylesheet" type="text/css" href="signup.css">
+<link rel="stylesheet" type="text/css" href="/signup.css">
 		
 </head>
 <body style="background-color: bisque;">
@@ -19,32 +19,37 @@ crossorigin="anonymous">
 	<br>
 	<br>
 	<br>
-	<div class="container" style="background-color: bisque;">
+	<div class="container" style="background-color: bisque;height: 450px;">
 		<div class="row">
 		<div class="col-md-3">
 					
 		</div>
 				
-		<div class="col-md-6 main" style="background-color: #AED5D2;">
+		<div class="col-md-6 main" style="background-color: #AED5D2; border-radius: 16px;">
 					
 			<form action="/login" method="post">
-					<img src="images/logo.png" style="position: relative;left:200px;width: 150px;height:100px;box-shadow: #696969;border-radius: 16px;">
-			<h1> Login </h1>
+					<img src="images/logo.png" style="position: relative;left:200px;width: 150px;height:100px;box-shadow: #696969;border-radius: 16px;margin-top: 15px;">
+			<h1 style="position: relative;left:220px;width: 350px;"> Login </h1>
 			<style>.box{
 				border-radius: 16px;box-shadow: #696969;
+				margin-bottom: 30px;
 			}</style>
 							
 			
-			<input class="box" type="text" name="email" id="email"
+			<input class="box" type="text" name="email" id="email" style="position: relative;left:80px;width: 350px;padding: 15px;;box-shadow: #696969;"
 			placeholder="E-Mail " required /><br>
 							
-			<input class="box" type="text" name="password"
+			<input class="box" type="text" name="password" style="position: relative;left:80px;width: 350px;padding:15px;box-shadow: #696969;"
 			id="password" placeholder="Password " required/><br>
 			
-			<input type="submit" id="submitDetails"
+			<input type="submit" class="btn btn-primary" id="submitDetails" style="padding: 10px;margin-bottom: 50px;position: relative;left: 180px;width: 200px;border-radius: 16px;" 
 			name="submitDetails" value="Submit" /><br>
 					
 			</form>
+			<script>function backtoindex(){
+				window.location.replace('http://127.0.0.1:8080');
+			  }</script>
+	<Button class="btn btn-primary" onclick="backtoindex()">Back to Modish Trade</Button>
 					
 		</div>
 				
