@@ -30,10 +30,11 @@ body{
 .container1{
     background-color: #d7f0ee;
     height: 75vh;
-    margin: 52px -20vh;
+    margin: 52px -380px;
     width: 140vh;
     border-radius: 10vh;
     box-shadow: 5px 10px #96b5b2;
+    
 }
 
 
@@ -123,6 +124,28 @@ body{
     border-radius: 10vh;
     box-shadow: 5px 10px #96b5b2;
     display:flex
+}
+.container2{
+    background-color: #d7f0ee;
+    margin: 0vh 10vh;
+    border-radius: 10px;
+    box-shadow: 5px 10px #96b5b2;
+    display:flex;
+    position: relative;
+    width: 450px;
+    left: 850px;
+    top:-700px;
+}
+.container4{
+    background-color: #d7f0ee;
+    margin: 0vh 10vh;
+    border-radius: 10px;
+    box-shadow: 5px 10px #96b5b2;
+    display:flex;
+    position: relative;
+    width: 450px;
+    left: 850px;
+    top:-600px;
 }
 
 

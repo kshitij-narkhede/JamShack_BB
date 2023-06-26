@@ -5,6 +5,10 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const path=require('path');
 
+
+const { createProduct, Product, createSignup ,Signup } = require('./models.js');
+
+
 const express = require('express');
 const mongoose = require('mongoose');
 const ejs = require('ejs');
@@ -84,7 +88,7 @@ try{
     app.get('/details/:id', (req, res) => {
       const cardId = req.params.id; // Get the card ID from the route parameters
     
-      const Product = require('./models.js');
+      // const Product = require('./models.js');
 
       // Fetch the card information from MongoDB using the cardId
       Product.findById(cardId)
@@ -104,7 +108,7 @@ try{
 
 
 
-    const Product = require('./models.js');
+    // const Product = require('./models.js');
 
     app.get('/', (req, res) => {
         Product.find({})
@@ -206,7 +210,7 @@ res.render('rent', {
 
       try {
         
-          const createSignup = require('./models.js');
+          // const createSignup = require('./models.js');
           createSignup(fname, lname,age,email,password,phone,address,city,zipcode);
     
         res.send('Signup successful!');
@@ -237,7 +241,7 @@ app.post('/login', async (req, res) => {
   try {
     var email = req.body.email;
       var password=req.body.password;
-      const Signup = require('./models.js');
+      // const Signup = require('./models.js');
       const user = await Signup.findOne({ email })
 
 
@@ -445,7 +449,7 @@ app.post('/login', async (req, res) => {
 
         try {
           
-            const createProduct = require('./models.js');
+            // const createProduct = require('./models.js');
             createProduct(model_name, category,physical_condition,warranty,date_of_purchase,color,dimension,quantity,price,description,photosurl,sellorrent);
       
           res.send('Signup successful!');

@@ -1,136 +1,235 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="product.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Product page </title>
+    <link rel="stylesheet" href="product_olx.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-    <title>Product Page</title>
-  </head>
-  <body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
-    <div class="container">
+</head>
 
-        <!-- **************************8 ***************** -->
-        <div class="container1">
+<body>
 
-            <div id="carouselExampleControls" class="objectimg carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="images/128.jpeg" style="height:60vh" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/127.jpeg" style="height:60vh" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/126.jpeg" style="height:60vh" class="d-block w-100" alt="...">
-                  </div>
+
+    <!-- =============================== * navbar * ============================================ -->
+
+    <div class="hedder">
+        <div class="navbar">
+
+
+
+
+            <img src="images/logo.png">
+
+
+            <div class="search_box">
+                <input type="text" class="searchclass" id="searchid" placeholder="Search...">
+                <p> <i class="fa-solid fa-magnifying-glass"></i> </p>
+            </div>
+
+
+
+
+                <div class="dropdwon" id="gropdwonid">
+                    <div class="nameandimg">
+                        <img src="images/pic3.jpg">
+                        <p> Puja Varma </p>
+
+
+                    <ul>
+                        <li>
+                            <i class="fa-regular fa-user"></i>
+                            <p>My Account</p>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-box"></i>
+                            <p>My Orders</p>
+                        </li>
+                        <hr>
+                        <li>
+                            <i class="fa-regular fa-circle-question"></i>
+                            <p>Help</p>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-gear"></i>
+                            <p>Setting</p>
+                        </li>
+                        <hr>
+
+                        <li>
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <p>Log Out</p>
+                        </li>
+
+                    </ul>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </div>
+            </div>
 
+
+            
+
+
+        </div>
+    </div>
+
+
+    <!-- =============================== * ad 1 * ============================================ -->
+
+
+
+
+
+    <!-- =============================== * product img * ============================================ -->
+
+
+
+    <div class="product_img">
+
+
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner" style="height:376 px;width: 850px;">
+              <div class="carousel-item active">
+                <img src="images/127.jpeg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/128.jpeg" class="d-block w-100" style="height: 376px;width: 800px;" alt="...">
+              </div>
+              <div class="carousel-item">
+                    <img src="images/126.jpeg" class="d-block w-100" style="height: 376px;width: 800px;" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
         </div>
 
 
-            <!-- **************************8 ***************** -->
+        <div class="description">
+            <h3> description </h3>
+            <p>Convert your TV into smart TV using HDMI of your TV. All online platform available downloaded. <br>
+                Include MI stick, Bluetooth remote, Power adapter. <br>
+                Condition new. <br>
+                MRP 3,500</p>
+        </div>
 
-
-            <div class="container2">
-
-                <div class="style12 prize">
-                    <div class="box">
-                        <div class="price">
-                            <div class="cost">
-                                <h3 ><b> ₹3,500</b></h3>
-                            </div>
-                            
-                            <div class="prizeicon">
-                                <p><i class="fa-solid fa-share-nodes share"></i> </p>
-                                <p> <i class="fa-regular fa-heart"></i> </p>
-                            </div>
-                        </div>
-                        <span> Mi TV Stick </span>
-                        <div class="location">
-                            <p>Ghatkopar West, Mumbai, Maharashtra</p>
-                            <p>Today</p>
-                        </div>
-                        <a class="btn chatbtn" href="#" role="button">Buy</a>
-                        <a class="btn chatbtn" href="#" role="button">Rent</a>
+        <div class="product_details">
+            <div class="box">
+                <div class="price">
+                    <h3> ₹3,500</h3>
+                    <div>
+                        <p><i class="fa-solid fa-share-nodes"></i> </p>
+                        <p> <i class="fa-regular fa-heart"></i> </p>
                     </div>
-                   
                 </div>
+                <span> Mi TV Stick </span>
+                <div class="location">
+                    <p>Ghatkopar West, Mumbai, Maharashtra</p>
+                    <p>Today</p>
+                </div>
+            </div>
 
-                <div class="style12 sellersdetails">
-                    <h4 class="Seller_description"> <b>Seller Description</b> </h4>
+            <div class="box" id="box2">
+                <p class="Seller_description"> Seller Description </p>
                 <div class="seller_detail">
+                    <img src="images/pic2.jpg">
                     <div>
                         <h2> AsKAki </h2>
-                        <p>Email : askaki123@gmail.com</p>
                         <p>Member since Nov 2021</p>
                     </div>
                 </div>
-                <a class="btn chatbtn" href="#" role="button">Chat with Seller</a>
-                </div>
+                <a href="olx_chatbox.html"> Chat with Seller  </a>
 
             </div>
 
+         <div class="box" id="box3">
+              <h2> Posted in </h2>
+              <p>Bandra East, Mumbai</p>
+              <img src="images/location.png" >
+         </div>
+
+
+
         </div>
+
+
 
     </div>
 
-<!-- **************************8 ***************** -->
-        <div class="container3">
-
-            <div class="details detailstyle">
-                <div class="objectname">
-                    <h3><b>Study Table</b></h3>
-                </div><br><br>
-                <div class="detailsinfo">
-                    <P>Date Listed : 12/02/2023</P>
-                    <P>Physical Condition : Refurbished</P>
-                    <P>warranty Status : NA</P>
-                    <P>Year Of Purchase : 2022</P>
-                </div>
-            
-            </div>
-
-            <div class="features detailstyle">
-
-                <div>
-                    <h3><b>Product Details</b></h3><br><br>
-                </div>
-                <div class="featureslist">
-                    <P>Model : Liner</P>
-                    <p>Color : Yellow</p>
-                    <p>Dimensions : 30 x 30 inches</p>
-                    <p>Quantity : 1</p>
-                </div>
 
 
+    <script>
+        //  =============================== * navbar * ============================================
 
-            </div>
+        let contry = document.getElementById('contry');
+        let moving = document.getElementById('moving');
+        let text = document.getElementById('text');
+        let list = document.getElementById('list');
 
 
-        </div>
-        
+        contry.addEventListener('click', () => {
+            list.classList.toggle('hidden');
+            moving.classList.toggle('roted')
+        });
+        function myfunction(omkar) {
+            text.innerHTML = omkar;
+        }
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+        let eng_tag = document.getElementById('eng_tag');
+        let hin_eng = document.querySelector('.hin_eng');
+        let language = document.querySelector('.language');
+
+
+        language.addEventListener('click', () => {
+            hin_eng.classList.toggle('display_div');
+        });
+        function languageolx(anyone) {
+            eng_tag.innerHTML = anyone;
+        }
+
+        let girl_img_id = document.getElementById('girl_img_id');
+        let gropdwonid = document.getElementById('gropdwonid');
+
+        girl_img_id.addEventListener('click', () => {
+            gropdwonid.classList.toggle('block_div')
+        });
+
+
+
+        //  =============================== * product img* ============================================
+
+
+        const swiper = new Swiper('.swiper', {
+
+            loop: true,
+
+
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+        });
+
+
+    </script>
+
+</body>
+
 </html>
