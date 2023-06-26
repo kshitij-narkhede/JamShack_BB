@@ -8,130 +8,112 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/product.css">
-    <!-- <link rel="stylesheet" href="/style.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script> -->
     <title>Product Page</title>
   </head>
   <body>
-    <div class="header1">
-        <form action="">
-            <div class="cont" style="color:black">
-                <img class="logo" src="/images//logo.png">
-                <input type="search" class="search" placeholder="Search for Products...">
-                <button type="submit">Search</button>
-                <span class="glyphicon glyphicon-filter" style="left:30vh"><b>Filter</b></span>
-                <a href="#" style="padding: 0 3vh;padding-left: 65vh; color: black;">Wishlist</a>
-                            <a  href="#" style="padding: 0 3vh; color: black">Your Listing</a>
-                            <a  href="#" style="padding: 0 3vh; color: black">Your Orders</a>
-                            <button class="btn " type="button" style="background-color:#01404F;color: white; margin-left: 8vh;">Demand a product</button>
-                            <i class="fa fa-user" style="color:black;margin-left: 8vh;"></i>
-            </div>
-                   
-                    
-                        </form>
-                            <!-- Login Model -->
+    <div class="mainBody">
+      <div class="header1">
+  <form action="">
+      <div class="cont" style="color:black">
+          <img class="logo" src="/images/logo.png">
+          <input type="search" class="search" placeholder="Search for Products...">
+          <button type="submit">Search</button>
+          <span class="glyphicon glyphicon-filter" style="left:30vh"><b>Filter</b></span>
+          <a href="#" style="padding: 0 3vh;padding-left: 65vh; color: black;">Wishlist</a>
+                      <a  href="#" style="padding: 0 3vh; color: black">Your Listing</a>
+                      <a  href="#" style="padding: 0 3vh; color: black">Your Orders</a>
+                      <button class="btn " type="button" style="background-color:#01404F;color: white; margin-left: 8vh;">Demand a product</button>
+                      <i class="fa fa-user" style="color:black;margin-left: 8vh;"></i>
+      </div>
+             
+                      
+  </form>
+                     
+  
+      <!-- =============================== * navbar * ============================================ -->
+                  <div style="background-color: #cee6e7; padding: 10px;width: 100%;justify-content: space-between;">
+                      <button class="btn btn-primary dropdown-toggle textButton"  type="button" data-bs-toggle="dropdown">
+                          Mobile Phones
                            
-                               
-            <!-- =============================== * navbar * ============================================ -->
-                        <div style="background-color: #696969; padding: 10px;width: 100%;justify-content: space-between;">
-                            <button class="btn btn-primary dropdown-toggle textButton"  type="button" data-bs-toggle="dropdown">
-                                Mobile Phones
-                                 
-                              </button>
-                              <style>
-                                .textButton {
-                                    background: none;
-                                    border: none;
-                                }
-                         
-                                #textButton:hover {
-                                    background-color: green;
-                                }
-                            </style>
-                              <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                              </div>
-                              <button class="btn btn-primary dropdown-toggle textButton" type="button" data-bs-toggle="dropdown">
-                                Electronic Appliances
-                                
-                              </button>
-                              <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                              </div>
-                              <button class="btn btn-primary dropdown-toggle textButton" type="button" data-bs-toggle="dropdown">
-                                Bikes and Cars
-                                
-                              </button>
-                              <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                              </div>
-                              <button class="btn btn-primary dropdown-toggle textButton" type="button" data-bs-toggle="dropdown">
-                                Furniture
-                                
-                              </button>
-                              <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                              </div>
-                              <button class="btn btn-primary dropdown-toggle textButton" type="button" data-bs-toggle="dropdown">
-                                Books,Sports and Hobbies
-                               
-                              </button>
-                              <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                              </div>
-                              
-                                <script>var number=1;
-                                function showvalue(){   
-                                    console.log(number);
-                                }
-                                function showvalue1(){
-                                    var number=0;
-                                    console.log(number);
-                                }</script>
-                                <style>
-                                    #switchbuy{
-                                        width: 50px;
-                                        position: relative;
-                                    }
-                                </style>
-                              <button type" id="switchbuy" name="switch" value=1  onclick="showvalue()">BUY</button>
-                              <button type" id="switchrent" name="switch" value=0  onclick="showvalue1()">RENT</button>
-                               
-                                
-                             
+                        </button>
+                        <style>
+                          .textButton {
+                              background: none;
+                              border: none;
+                              color: black;
+                          }
+                   
+                          #textButton:hover {
+                              background-color: green;
+                          }
+                      </style>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
                         </div>
-            
-                    
-                
-            </div>
+                        <button class="btn btn-primary dropdown-toggle textButton" type="button" data-bs-toggle="dropdown">
+                          Electronic Appliances
+                          
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                        <button class="btn btn-primary dropdown-toggle textButton" type="button" data-bs-toggle="dropdown">
+                          Bikes and Cars
+                          
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                        <button class="btn btn-primary dropdown-toggle textButton" type="button" data-bs-toggle="dropdown">
+                          Furniture
+                          
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                        <button class="btn btn-primary dropdown-toggle textButton" type="button" data-bs-toggle="dropdown">
+                          Books,Sports and Hobbies
+                         
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                        
+                  </div>
+      
+              
+          
+      </div>
+
     <div class="container">
 
         <!-- **************************8 ***************** -->
-        <!--Navbar-->
-        
         <div class="container1">
 
             <div id="carouselExampleControls" class="objectimg carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="/images/123.jpg" style="height:60vh;border-radius: 16px; -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));" class="d-block w-100" alt="...">
+                    <img src="/users/<%= card.photosurl %>" style="height:60vh;border-radius: 16px;" class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item">
-                    <img src="/images/127.jpeg" style="height:60vh; border-radius: 16px; -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));" class="d-block w-100" alt="...">
+                    <img src="images/127.jpeg" style="height:60vh;border-radius: 16px;" class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item">
-                    <img src="/images/126.jpeg" style="height:60vh;border-radius: 16px; -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));" class="d-block w-100" alt="...">
+                    <img src="images/126.jpeg" style="height:60vh;border-radius: 16px;" class="d-block w-100" alt="...">
                   </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -149,45 +131,51 @@
 
             <!-- **************************8 ***************** -->
 
-            
+
             <div class="container2">
 
                 <div class="style12 prize">
                     <div class="box">
-                      <span style="position: relative;left: 35px;top: 10px; "><h2><%= card.model_name %> </h2></span>
+                      <!-- <span><h2 style="position: relative; left: 20px;"><%= card.model_name %> </h2></span> -->
                         <div class="price">
-                            <div class="cost">
-                                <h2 style="position: relative;left: 35px;margin-top: 10px;"><b>Price: ₹<%= card.price %></b></h2>
+                            <div class="cost" style="position: relative;top: 5px; left: 20px;">
+                                <h3 >Price: <b>₹<%= card.price %></b></h3>
                             </div>
-                            
-                            <div class="prizeicon" >
-                                <p ><i class="fa-solid fa-share-nodes share"></i> </p>
+
+                            <div class="prizeicon">
+                                <p><i class="fa-solid fa-share-nodes share"></i> </p>
                                 <p> <i class="fa-regular fa-heart"></i> </p>
                             </div>
                         </div>
-                       
-                        <div class="location" style="position: relative;left: 35px;margin-top: 10px;">
-                            <h3>Address: <%= card.address %></h3>
+                        <span><h3 style="position: relative; top: 10px; left: 20px;">Kondhwa, Pune</h3></span>
+                        <div class="location" style="position: relative; left: 20px;">
+                            <p><%= card.address %></p>
                             <p>Today</p>
-                        </div>
-                        <a class="btn btn-danger" href="#" style="position: relative;left: 135px;margin-top: 10px;padding: 10px;" role="button">For - <%= card.sellorrent %></span></a>
-                        <!-- <a class="btn chatbtn" href="#" role="button">Rent</a> -->
+                          </div>
+                          <!-- <a class="btn btn-primary" href="#" role="button" style="position: relative;top: 15px; left: 20px;">Product For <%= card.sellorrent %></a> -->
+                            <a role="button" href="#" style="position: relative;top: 15px; left: 20px;color: black;">Product For <%= card.sellorrent %></a>
+                            <a role="button" class="btn btn-info" href="#" style="position: relative;top: 15px; left: 20px;background-color: #01404F;border-radius: 15px;">Proceed to Gateway</a>
+                        
+                        
                     </div>
-                   
+
                 </div>
                 </div>
                 <div class="container4">
 
-                <div class="style12 sellersdetails">
-                    <h4 class="Seller_description"> <b>Seller Description</b> </h4>
+                <div class="style12 sellersdetails" >
+                    <h4 class="Seller_description" style="position: relative;left: 65px;margin-bottom: 25px;margin-top: 10px;"> <b>Seller Description</b> </h4>
                 <div class="seller_detail">
-                    <div>
-                        <h2> AsKAki </h2>
-                        <p>Email : askaki123@gmail.com</p>
-                        <p>Member since Nov 2021</p>
+                    <div style="position: relative;left: 20px;top:5px;">
+                        <h4> Kshitij Narkhede </h4>
+                        <p><h5>Email :</h5> kshitijnarkhede10@gmail.com</p>
+                        <p><h5>Member since Nov 2021</h5></p>
+                        <a class="btn btn-primary"  role="button" href="https://wa.me/9359257953" style="position: relative;top: 10px; left: 25px; background-color: #01404F;width: 260px;border-radius: 15px;"><i class="fa fa-whatsapp" style="font-size:20px;color:rgb(246, 249, 247)"></i> Chat with Seller</a>
+
+                          <a />
                     </div>
                 </div>
-                <a class="btn chatbtn" href="#" role="button">Chat with Seller</a>
+                <!-- <a class="btn chatbtn" href="#" role="button">Chat with Seller</a> -->
                 </div>
 
             </div>
@@ -200,27 +188,40 @@
         <div class="container3">
 
             <div class="details detailstyle">
-                <div class="objectname">
+                <div class="objectname" style="position: relative;left:350px;top:20px;">
                     <h3><b><%= card.model_name %></b></h3>
                 </div><br><br>
-                <div class="detailsinfo">
-                    <P>Year Of Purchase : <%= card.date_of_purchase %></P>
-                    <P>Physical Condition : <%= card.physical_condition %></P>
-                    <P>warranty Status : <%= card.warranty %></P>
-                    
+                <div class="detailsinfo" style="position: relative;left:100px;top:20px;">
+                    <h5 style="margin-bottom: 30px;">Year Of Purchase : <%= card.date_of_purchase %></h5>
+                    <h5 style="margin-bottom: 30px;">Physical Condition : <%= card.physical_condition %></h5>
+                    <h5 style="margin-bottom: 30px;">warranty Status : <%= card.warranty %></h5>
+
                 </div>
-            
+
             </div>
+            <style>
+              .vl {
+  border-left: 6px dotted   rgb(1, 17, 161) ;
+  height: 350px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  opacity: 0.30;
+  top: 0;
+}
+              </style>
+              
+              <div class="vl"></div>
 
             <div class="features detailstyle">
 
-                <div>
+                <div style="position: relative;left:700px;top: 20px;">
                     <h3><b>Product Details</b></h3><br><br>
                 </div>
-                <div class="featureslist">
-                    <p>Color :<%= card.color %></p>
-                    <p>Dimensions : <%= card.dimension %></p>
-                    <p>Quantity : <%= card.quantity %></p>
+                <div class="featureslist" style="position: relative;left:560px;top:20px;">
+                    <h5 style="margin-bottom: 30px;">Color :<%= card.color %></h5>
+                    <h5 style="margin-bottom: 30px;">Dimensions : <%= card.dimension %></h5>
+                    <h5 style="margin-bottom: 30px;">Quantity : <%= card.quantity %></h5>
                 </div>
 
 
@@ -229,7 +230,7 @@
 
 
         </div>
-        
+
 
 
     <!-- Optional JavaScript -->
@@ -237,5 +238,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
   </body>
 </html>
