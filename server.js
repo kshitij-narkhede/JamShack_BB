@@ -1,3 +1,5 @@
+// Some required imports
+
 // const express = require('express');
 const bodyParser = require('body-parser');
 // const bcrypt = require('bcrypt');
@@ -8,6 +10,13 @@ const path=require('path');
 
 const { createProduct, Product, createSignup ,Signup } = require('./models.js');
 
+
+
+
+
+
+
+//  ************************************ Payment Gateway *************************************************************//
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -67,7 +76,7 @@ app.listen(5000, function(error){
   if(error) throw error
 
 
-
+// ********************************************************** Database Connnection ********************************************************//
 const database = module.exports = () => {
     const connectionParams  = {
       useNewUrlParser :true,
@@ -84,6 +93,7 @@ try{
     // getProduct();
 
 
+    //****************************************Fetching the card details****************************************************************//
 
     app.get('/details/:id', (req, res) => {
       const cardId = req.params.id; // Get the card ID from the route parameters
@@ -143,43 +153,8 @@ res.render('rent', {
 })
 });
 
-//   app.get('/demo', (req, res) => {
 
-//     const switchValue = req.query.switch; // Get the value of the 'switch' query parameter
-//      console.log(switchValue);
-//   let filter = {};
-//   if (switchValue === "1") {
-//     console.log("Sell")
-//     filter = { sellorrent: "Sell" }; // Filter for 'sell' items
-//   } else if (switchValue === "0") {
-//     console.log("Buy")
-//     filter = { sellorrent: "Rent" }; // Filter for 'rent' items
-//   }
-
-//     Product.find(filter)
-// .exec()
-// .then(data => {
-//   res.render('demo', {
-//     dataList: data
-//   });
-// })
-// });
-
-
-
-
-
-//   app.get('/demo', (req, res) => {
-//     Product.find({})
-// .exec()
-// .then(data => {
-//   res.render('demo', {
-//     dataList: data
-//   });
-// })
-// });
-
-//  SignUp Function 
+//***************************************************SignUp Function************************************************************************* //
 
     app.get('/sign_up', (req, res) => {
       fs.readFile('sign_up.html', 'utf8', (err, data) => {
@@ -267,137 +242,8 @@ app.post('/login', async (req, res) => {
 
 })
 
-// //TODO: ****************************************CARD DATA FETCH ****************************************************//
-
-
-// app.get('/login', (req, res) => {
-//   fs.readFile('login.html', 'utf8', (err, data) => {
-//     if (err) {
-//       console.error('Error reading login.html:', err);
-//       res.status(500).send('Internal Server Error');
-//       return;
-//     }
-
-//     res.send(data);
-//   });
-// });
-
-
-// app.post('/login', async (req, res) => {
-
-//   try {
-//     var user_id = req.body.user_id;
-//     var Modelname=req.body.Modelname;
-//     var Features=req.body.Features;
-//     var Color=req.body.Color;
-//     var Warranty=req.body.Warranty;
-//     var Sell=req.body.Sell;
-//     var Rent=req.body.Rent;
-//     var Price=req.body.Price;
-//     var DateListing=req.body.DateListing;
-//     var Size=[{height:req.body.height,width:req.body.width,length:req.body.length}];
-
-
-
-
-//       const fetchproduct = require('./models.js');
-//       const productdet = await fetchproduct.findOne({ Modelname })
-
-//       console.log(productdet);
-      
-//   } 
-  
-//   catch (e) {
-
-//       res.send("wrong details")
-      
-
-//   }
-
-
-// });
-
-// //  ******************************** Update Documents *******************************************************************//
-
-
-// const UpdateDocument  = async(_id) => {
-
-// try{
-  
-//   const result = await Product.updateOne( {_id},{
-//     $set:{
-//     firstname : "Shark",
-//   }
-// }
-// );
-// console.log(result);
-// }
-// catch(err){console.log(err);}
-// }
-
-// UpdateDocument(_id);
-
-
   /**************** SELL   ************************************************************************************************************** */
 
-    // app.get('/sell', (req, res) => {
-    //     res.send(`
-    //     <form method="POST" action="/sell">
-    //     <label for="model">Model Name:</label>
-    //     <input class="inputstyle" type="text" id="model" name="model_name" required ><br>
-
-    //     <label for="category">Category:</label>
-    //     <select class="inputstyle" id="category" name="category" required>
-    //         <option value="category1">Category 1</option>
-    //         <option value="category2">Category 2</option>
-    //         <option value="category3">Category 3</option>
-    //     </select><br><br>
-
-    //     <label for="condition">Physical Condition:</label>
-    //     <select class="inputstyle" id="condition" name="physical_condition" required>
-    //         <option value="new">New</option>
-    //         <option value="used">Used</option>
-    //         <option value="refurbished">Refurbished</option>
-    //     </select><br><br>
-
-    //     <label for="warranty">Warranty Status:</label>
-    //     <select class="inputstyle" id="warranty" name="warranty" required>
-    //         <option value="underWarranty">Under Warranty</option>
-    //         <option value="outOfWarranty">Out of Warranty</option>
-    //         <option value="noWarranty">No Warranty</option>
-    //     </select><br><br>
-
-    //     <label for="year">Date of Purchase:</label>
-    //     <input class="inputstyle" type="text" id="datepicker" name="date_of_purchase" required><br><br>
-
-    //     <label for="color">Color:</label>
-    //     <input class="inputstyle" type="text" id="color" name="color" required><br><br>
-
-    //     <label for="dimension">Dimensions:</label>
-    //     <input class="inputstyle" type="text" id="dimension" name="dimension" required><br><br>
-
-    //     <label for="quantity">Quantity:</label>
-    //     <input class="inputstyle" type="text" id="quantity" name="quantity" step="1" required><br><br>
-
-    //     <!-- <label for="photos">Photos:</label>
-    //     <input type="file" id="photos" name="photos" required><br><br> -->
-
-    //     <!-- <label for="sellRent">Sell/Rent:</label>
-    //     <input type="radio" id="sell" name="sellRent" value="sell" required>
-    //     <label for="sell">Sell</label>
-    //     <input type="radio" id="rent" name="sellRent" value="rent" required>
-    //     <label for="rent">Rent</label><br><br> -->
-
-    //     <label for="price">Price:</label>
-    //     <input class="inputstyle" type="text" id="price" name="price" required><br><br>
-
-    //     <label for="description">Description:</label>
-    //     <input class="inputstyle" type="text" id="description" name="description" required><br>
-
-    //     <input type="submit" class="btn" value="Submit">
-    // </form>
-    //     `);
-    //   });
 
     const multer = require('multer')
     const path = require('path')
