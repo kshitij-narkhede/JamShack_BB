@@ -41,7 +41,7 @@ try{
       Product.findById(cardId)
         .exec()
         .then(data => {
-          res.render('details', {
+          res.render('product', {
             card: data
           });
         })
@@ -57,15 +57,15 @@ try{
 
     const Product = require('./models.js');
 
-  //   app.get('/', (req, res) => {
-  //       Product.find({})
-  //   .exec()
-  //   .then(data => {
-  //     res.render('index', {
-  //       dataList: data
-  //     });
-  //   })
-  // });
+    app.get('/', (req, res) => {
+        Product.find({})
+    .exec()
+    .then(data => {
+      res.render('index', {
+        dataList: data
+      });
+    })
+  });
 
   app.get('/demo', (req, res) => {
     Product.find({})
