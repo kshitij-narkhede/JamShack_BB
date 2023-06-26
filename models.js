@@ -86,10 +86,14 @@ const productSchema = new mongoose.Schema({
     }catch(e){}
 }
 
+
+module.exports.createProduct = createProduct;
+module.exports.Product = Product;
+
 // // createDocument();
 
 // module.exports = createProduct;
-module.exports = Product;
+// module.exports = Product;
 
 
 
@@ -164,6 +168,12 @@ const createSignup  = async(fname, lname,age,email,password,phone,address,city,z
   }catch(e){console.log(e);}
 }
   
+
+
+module.exports.createSignup = createSignup;
+module.exports.Signup = Signup;
+
+
 // createDocument();
 
 // module.exports = createSignup;
