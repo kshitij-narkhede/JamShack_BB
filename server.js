@@ -67,15 +67,64 @@ try{
     })
   });
 
-  app.get('/demo', (req, res) => {
-    Product.find({})
+
+  app.get('/buy', (req, res) => {
+    Product.find({sellorrent:"Sell"})
 .exec()
 .then(data => {
-  res.render('demo', {
+  res.render('buy', {
     dataList: data
   });
+  console.log(data);
 })
 });
+
+app.get('/rent', (req, res) => {
+  Product.find({sellorrent:"Rent"})
+.exec()
+.then(data => {
+res.render('rent', {
+  dataList: data
+});
+
+})
+});
+
+//   app.get('/demo', (req, res) => {
+
+//     const switchValue = req.query.switch; // Get the value of the 'switch' query parameter
+//      console.log(switchValue);
+//   let filter = {};
+//   if (switchValue === "1") {
+//     console.log("Sell")
+//     filter = { sellorrent: "Sell" }; // Filter for 'sell' items
+//   } else if (switchValue === "0") {
+//     console.log("Buy")
+//     filter = { sellorrent: "Rent" }; // Filter for 'rent' items
+//   }
+
+//     Product.find(filter)
+// .exec()
+// .then(data => {
+//   res.render('demo', {
+//     dataList: data
+//   });
+// })
+// });
+
+
+
+
+
+//   app.get('/demo', (req, res) => {
+//     Product.find({})
+// .exec()
+// .then(data => {
+//   res.render('demo', {
+//     dataList: data
+//   });
+// })
+// });
 
 //  SignUp Function 
 
