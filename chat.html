@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Modish Trade Chat app </title>
+	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+	<h1 class="font-bold text-green-500
+			text-3xl text-center mt-5">
+		Modish Trade
+	</h1>
+	<div>
+		<h2 class="font-semibold text-xl
+				text-center mt-5"
+			id="logo">
+			Chat Appliaction for Users
+		</h2>
+	</div>
+	<form class="flex flex-col justify-center
+				items-center mt-5"
+		id="form">
+		<input class="border border-gray-400
+					rounded-md mt-5 p-1"
+			type="text"
+			placeholder="Name"
+			id="myname">
+		<input class="border border-gray-400
+					rounded-md mt-5 p-1"
+			type="text"
+			placeholder="Message"
+			id="message">
+		<button class="bg-blue-500 rounded-md p-2
+					text-white mt-5">
+			Send
+		</button>
+	</form>
+	<div class="flex flex-col justify-center
+				items-center mt-5"
+		id="messageArea">
+	</div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+	let socket = io();
+
+	let form = document.getElementById('form');
+	let myname = document.getElementById('myname');
+	let message = document.getElementById('message');
+	let messageArea = document.getElementById("messageArea");
+
+	form.addEventListener("submit", (e) => {
+		e.preventDefault();
+
+		if (message.value) {
+			socket.emit('send name', myname.value);
+			socket.emit('send message', message.value);
+			message.value = "";
+		}
+	});
+
+	socket.on("send name", (username) => {
+		let name = document.createElement("p");
+		name.style.backgroundColor = "grey";
+		name.style.width = "100%";
+		name.style.textAlign = "center";
+		name.style.color = "white";
+		name.textContent = username + ":";
+		messageArea.appendChild(name);
+	});
+
+	socket.on("send message", (chat) => {
+		let chatContent = document.createElement("p");
+		chatContent.textContent = chat;
+		messageArea.appendChild(chatContent);
+	});
+</script>
+
+</html>
