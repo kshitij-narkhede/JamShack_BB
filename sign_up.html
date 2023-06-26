@@ -19,19 +19,20 @@ crossorigin="anonymous">
 	<br>
 	<br>
 	<br>
-	<div class="container" style="background-color: bisque;">
+	<div class="container" style="background-color: bisque;padding: 20px;" >
 		<div class="row">
 		<div class="col-md-3">
 					
 		</div>
 				
-		<div class="col-md-6 main" style="background-color: #AED5D2;">
+		<div class="col-md-6 main" style="background-color: #AED5D2;border-radius: 16px;padding: 20px;">
 					
 			<form action="/sign_up" method="POST">
 					<img src="images/logo.png" style="position: relative;left:200px;width: 150px;height:100px;box-shadow: #696969;border-radius: 16px;">
-			<h1> Signup form </h1>
+			<h1 style="position: relative;left:150px;"> Signup form </h1>
 			<style>.box{
 				border-radius: 16px;box-shadow: #696969;
+				position: relative;left:80px;padding: 10px;width: 370px;margin-bottom: 15px;
 			}</style>
 							
 			<input class="box" type="text" name="fname" id="name"
@@ -58,10 +59,14 @@ crossorigin="anonymous">
 		<input class="box" type="text" name="zipcode" id="zipcode"
 			placeholder="ZIP Code " required/><br>
 						<br>
-			<input type="submit" id="submitDetails"
+			<input type="submit" class="btn btn-primary" style="padding: 10px;margin-bottom: 50px;position: relative;left: 180px;width: 200px;border-radius: 16px;background-color: #01404F;" id="submitDetails"
 			name="submitDetails" value="Submit" /><br>
 					
 			</form>
+			<script>function backtoindex(){
+				window.location.replace('http://127.0.0.1:8080');
+			  }</script>
+	<Button class="btn btn-primary" onclick="backtoindex()" style="position: relative;left: 60px;background-color: #01404F;">Back to Modish Trade</Button
 					
 		</div>
 				

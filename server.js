@@ -46,12 +46,12 @@ app.post('/payment', function(req, res){
   stripe.customers.create({
       email: req.body.stripeEmail,
       source: req.body.stripeToken,
-      name: 'Gourav Hammad',
+      name: 'Seller',
       address: {
           line1: 'TC 9/4 Old MES colony',
           postal_code: '452331',
-          city: 'Indore',
-          state: 'Madhya Pradesh',
+          city: 'Pune',
+          state: 'Maharashtra',
           country: 'India',
       }
   })
@@ -153,6 +153,16 @@ res.render('rent', {
 })
 });
 
+app.get('/donate', (req, res) => {
+  Product.find({sellorrent:"Donate"})
+.exec()
+.then(data => {
+res.render('donate', {
+  dataList: data
+});
+
+})
+});
 
 //***************************************************SignUp Function************************************************************************* //
 
@@ -261,7 +271,8 @@ app.post('/login', async (req, res) => {
 
     var upload  = multer({
       storage:Storage
-    }).single('photos')
+    }).single('photosurl')
+    
 
 
     app.get('/sell', (req, res) => {
@@ -304,10 +315,6 @@ app.post('/login', async (req, res) => {
           res.send('Error signing up');
         }
       });
-      
-
-
-
 
 }
 catch(error){

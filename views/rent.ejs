@@ -27,9 +27,8 @@
             <img class="logo" src="images/logo.png" >
                     <input type="search" class="search" placeholder="Search for Products...">
                     <button type="submit">Search</button>
-                    <span class="glyphicon glyphicon-filter" style="left:300px"><b>Filter</b></span>
-                    <a  id="loginButton" class="btn btn-secondary btn-lg active " style="left:870px;position: relative;" role="button" data-toggle="modal" data-target="#LoginModal"  aria-pressed="true">Login</a>
-                    <a id="SigninButton" class="btn btn-secondary btn-lg active " style="left:900px;position: relative;" role="button"  aria-pressed="true">Sign-up</a>
+                    <a  id="loginButton" class="btn btn-secondary btn-lg active " style="left:870px;position: relative;" role="button" data-toggle="modal" onclick="login()" data-target="#LoginModal"  aria-pressed="true">Login</a>
+                    <a id="SigninButton" class="btn btn-secondary btn-lg active " style="left:900px;position: relative;" role="button" onclick="sign_up()" aria-pressed="true">Sign-up</a>
                 </form>
                    
                        
@@ -91,7 +90,9 @@
                         <a class="dropdown-item" href="#">Something else here</a>
                       </div>
                       
-                      <button id="button" style="height:4vh;width:6vh;" ></button>
+                      <button type" id="switchbuy" name="switch" value=1  style="background-color: #01404F;padding: 5px;border-radius: 8px;color:white ;" onclick="buy()">BUY</button>
+                      <button type" id="switchrent" name="switch" value=0 style="background-color: #01404F;padding: 5px;border-radius: 8px;color:white ;" onclick="donate()">Donate</button>
+                        
                        
                         
                      
@@ -145,7 +146,7 @@
  <h2 style="color: black;position: relative;text-transform: uppercase;"><%= data.model_name %></h2>
  <h4 style="color: black;margin-left: 20px;margin-top: 10px;">Price: ₹<%= data.price %></h4>
  <div class="addres_data">
-     <p style="color: black;">Address<%= data.address %></p>
+      
      <p style="color: black;">DOP: <%=data.date_of_purchase %></p>
  </div>
  <div><Button class="makeDeal">Make a Deal</Button></div>
@@ -245,7 +246,28 @@
     </script>
 
 
+<script>
 
+function login(){
+  window.location.replace('http://127.0.0.1:8080/login');
+}
+
+function sign_up(){
+  window.location.replace('http://127.0.0.1:8080/sign_up');
+}
+
+
+function buy(){
+  window.location.replace('http://127.0.0.1:8080/buy');
+}
+
+
+
+function donate(){
+  window.location.replace('http://127.0.0.1:8080/donate');
+}
+
+  </script>
 
 
 

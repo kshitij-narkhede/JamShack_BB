@@ -139,7 +139,7 @@
                       <!-- <span><h2 style="position: relative; left: 20px;"><%= card.model_name %> </h2></span> -->
                         <div class="price">
                             <div class="cost" style="position: relative;top: 5px; left: 20px;">
-                                <h3 >Price: <b>₹<%= card.price %></b></h3>
+                                <h3 id="price" >Price: <b>₹<%= card.price %></b></h3>
                             </div>
 
                             <div class="prizeicon">
@@ -149,12 +149,11 @@
                         </div>
                         <span><h3 style="position: relative; top: 10px; left: 20px;">Kondhwa, Pune</h3></span>
                         <div class="location" style="position: relative; left: 20px;">
-                            <p><%= card.address %></p>
                             <p>Today</p>
                           </div>
                           <!-- <a class="btn btn-primary" href="#" role="button" style="position: relative;top: 15px; left: 20px;">Product For <%= card.sellorrent %></a> -->
                             <a role="button" href="#" style="position: relative;top: 15px; left: 20px;color: black;">Product For <%= card.sellorrent %></a>
-                            <a role="button" class="btn btn-info" href="#" style="position: relative;top: 15px; left: 20px;background-color: #01404F;border-radius: 15px;">Proceed to Gateway</a>
+                            <a role="button" class="btn btn-info" href="#" onclick="payment_gateway()" style="position: relative;top: 15px; left: 20px;background-color: #01404F;border-radius: 15px; ">Proceed to Gateway</a>
                         
                         
                     </div>
@@ -231,7 +230,15 @@
 
         </div>
 
+<script>
+  var price= document.getElementById('price');
+  module.exports.price = price;
 
+  function payment_gateway(){
+  window.location.replace('http://127.0.0.1:8080/payment_gateway');
+}
+
+  </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

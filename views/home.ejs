@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html>
-<title>Stripe Payment Demo</title>
-<body>
-	<h3>Welcome to Payment Gateway</h3>
-	<form action="payment" method="POST">
+<title>Payment Gateway</title>
+<body style="background-color: bisque;">
+	<script>const { price } = require('./product.ejs');
+	console.log(price);
+	</script>
+	<div style="position:relative;left: 650px;top:250px;background-color: rgb(54, 198, 195);width: 250px;padding: 25px;border-radius: 16px;">
+	<h3 style="color: white;">Welcome to Payment Gateway</h3>
+	<form action="payment" method="POST" style="position: relative;">
 	<script
 		src="//checkout.stripe.com/v2/checkout.js"
 		class="stripe-button"
 		data-key="<%= key %>"
-		data-amount="2500"
+		data-amount=`$price`
 		data-currency="inr"
-		data-name="Seller"
-		data-description="User business here"
+		data-name="Modish-Seller"
+		data-description="Buy-Sell-Demand"
 		data-locale="auto" >
 		</script>
 	</form>
+</div>
+
+
+
+
 </body>
 </html>
