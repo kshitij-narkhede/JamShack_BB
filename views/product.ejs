@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/product.css">
-    <link rel="stylesheet" href="/style.css">
+    <!-- <link rel="stylesheet" href="/style.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <title>Product Page</title>
@@ -17,7 +17,7 @@
     <div class="header1">
         <form action="">
             <div class="cont" style="color:black">
-                <img class="logo" src="/images/logo.png">
+                <img class="logo" src="/images//logo.png">
                 <input type="search" class="search" placeholder="Search for Products...">
                 <button type="submit">Search</button>
                 <span class="glyphicon glyphicon-filter" style="left:30vh"><b>Filter</b></span>
@@ -149,31 +149,34 @@
 
             <!-- **************************8 ***************** -->
 
-
+            
             <div class="container2">
 
                 <div class="style12 prize">
                     <div class="box">
+                      <span style="position: relative;left: 35px;top: 10px; "><h2><%= card.model_name %> </h2></span>
                         <div class="price">
                             <div class="cost">
-                                <h3 ><b><%= card.price %></b></h3>
+                                <h2 style="position: relative;left: 35px;margin-top: 10px;"><b>Price: ₹<%= card.price %></b></h2>
                             </div>
                             
-                            <div class="prizeicon">
-                                <p><i class="fa-solid fa-share-nodes share"></i> </p>
+                            <div class="prizeicon" >
+                                <p ><i class="fa-solid fa-share-nodes share"></i> </p>
                                 <p> <i class="fa-regular fa-heart"></i> </p>
                             </div>
                         </div>
-                        <span><%= card.model_name %> </span>
-                        <div class="location">
-                            <p><%= card.address %></p>
+                       
+                        <div class="location" style="position: relative;left: 35px;margin-top: 10px;">
+                            <h3>Address: <%= card.address %></h3>
                             <p>Today</p>
                         </div>
-                        <a class="btn chatbtn" href="#" role="button">Buy</a>
-                        <a class="btn chatbtn" href="#" role="button">Rent</a>
+                        <a class="btn btn-danger" href="#" style="position: relative;left: 135px;margin-top: 10px;padding: 10px;" role="button">For - <%= card.sellorrent %></span></a>
+                        <!-- <a class="btn chatbtn" href="#" role="button">Rent</a> -->
                     </div>
                    
                 </div>
+                </div>
+                <div class="container4">
 
                 <div class="style12 sellersdetails">
                     <h4 class="Seller_description"> <b>Seller Description</b> </h4>
