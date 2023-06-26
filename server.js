@@ -197,8 +197,7 @@ res.render('donate', {
         
           // const createSignup = require('./models.js');
           createSignup(fname, lname,age,email,password,phone,address,city,zipcode);
-    
-        res.send('Signup successful!');
+          res.redirect('/login');
         var u_id = Product.find({"fname":fname},{_id:1}); 
       } catch (error) {
         console.error('Error signing up:', error);
@@ -233,7 +232,7 @@ app.post('/login', async (req, res) => {
       if (user) {
   
         if (password === user.password) {
-          res.send('Login successful!');
+          res.redirect('/');
         } else {
           res.send('Invalid password!');
         }
@@ -326,7 +325,7 @@ catch(error){
 database();
 
 app.listen(8080, () => {
-console.log("Server is running at port 3000");
+console.log("Server is running at port 8080");
 });
 
 }); 
