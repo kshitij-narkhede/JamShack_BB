@@ -1,9 +1,22 @@
+// Some required imports
+
 // const express = require('express');
 const bodyParser = require('body-parser');
 // const bcrypt = require('bcrypt');
 // const mongoose = require('mongoose');
 const fs = require('fs');
 const path=require('path');
+
+
+const { createProduct, Product, createSignup ,Signup } = require('./models.js');
+
+
+
+
+
+
+
+//  ************************************ Payment Gateway *************************************************************//
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -14,7 +27,56 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public/'));
 
+var Publishable_Key = 'pk_test_51NN9fBSI90304Yamaxa65rmRDkvAmeR4h2kaOOtUeMdrFXpDkg58iAQtAlG2bVTpuXCIFSjjp8wd8i45x8y07BPX003MWhB4CF'
+var Secret_Key = 'sk_test_51NN9fBSI90304YamaLo78Fi6vQS605Edtibzcm3DOVT2bxFoP72jGxlffdpCWUSEsN5dwghtUnZvzxis6pgRdAOz00LAJIH1rJ'
+
+const stripe = require('stripe')(Secret_Key)
+app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs');
+
+app.get('/', function(req, res){
+  res.render('home', {
+     key: Publishable_Key
+  })
+})
+
+app.post('/payment', function(req, res){
+  // Moreover you can take more details from user
+  // like Address, Name, etc from form
+  stripe.customers.create({
+      email: req.body.stripeEmail,
+      source: req.body.stripeToken,
+      name: 'Gourav Hammad',
+      address: {
+          line1: 'TC 9/4 Old MES colony',
+          postal_code: '452331',
+          city: 'Indore',
+          state: 'Madhya Pradesh',
+          country: 'India',
+      }
+  })
+  .then((customer) => {
+
+      return stripe.charges.create({
+          amount: 2500,     // Charging Rs 25
+          description: 'Web Development Product',
+          currency: 'INR',
+          customer: customer.id
+      });
+  })
+  .then((charge) => {
+      res.send("Success")  // If no error occurs
+  })
+  .catch((err) => {
+      res.send(err)       // If some error occurs
+  });
+})
+
+app.listen(5000, function(error){
+  if(error) throw error
+
+
+// ********************************************************** Database Connnection ********************************************************//
 const database = module.exports = () => {
     const connectionParams  = {
       useNewUrlParser :true,
@@ -31,11 +93,12 @@ try{
     // getProduct();
 
 
+    //****************************************Fetching the card details****************************************************************//
 
     app.get('/details/:id', (req, res) => {
       const cardId = req.params.id; // Get the card ID from the route parameters
     
-      const Product = require('./models.js');
+      // const Product = require('./models.js');
 
       // Fetch the card information from MongoDB using the cardId
       Product.findById(cardId)
@@ -55,7 +118,7 @@ try{
 
 
 
-    const Product = require('./models.js');
+    // const Product = require('./models.js');
 
     app.get('/', (req, res) => {
         Product.find({})
@@ -90,43 +153,8 @@ res.render('rent', {
 })
 });
 
-//   app.get('/demo', (req, res) => {
 
-//     const switchValue = req.query.switch; // Get the value of the 'switch' query parameter
-//      console.log(switchValue);
-//   let filter = {};
-//   if (switchValue === "1") {
-//     console.log("Sell")
-//     filter = { sellorrent: "Sell" }; // Filter for 'sell' items
-//   } else if (switchValue === "0") {
-//     console.log("Buy")
-//     filter = { sellorrent: "Rent" }; // Filter for 'rent' items
-//   }
-
-//     Product.find(filter)
-// .exec()
-// .then(data => {
-//   res.render('demo', {
-//     dataList: data
-//   });
-// })
-// });
-
-
-
-
-
-//   app.get('/demo', (req, res) => {
-//     Product.find({})
-// .exec()
-// .then(data => {
-//   res.render('demo', {
-//     dataList: data
-//   });
-// })
-// });
-
-//  SignUp Function 
+//***************************************************SignUp Function************************************************************************* //
 
     app.get('/sign_up', (req, res) => {
       fs.readFile('sign_up.html', 'utf8', (err, data) => {
@@ -157,15 +185,17 @@ res.render('rent', {
 
       try {
         
-          const createSignup = require('./models.js');
+          // const createSignup = require('./models.js');
           createSignup(fname, lname,age,email,password,phone,address,city,zipcode);
     
         res.send('Signup successful!');
+        var u_id = Product.find({"fname":fname},{_id:1}); 
       } catch (error) {
         console.error('Error signing up:', error);
         res.send('Error signing up');
       }
     });
+
     
 /******************* Login ***************************/
 
@@ -186,7 +216,7 @@ app.post('/login', async (req, res) => {
   try {
     var email = req.body.email;
       var password=req.body.password;
-      const Signup = require('./models.js');
+      // const Signup = require('./models.js');
       const user = await Signup.findOne({ email })
 
 
@@ -212,137 +242,8 @@ app.post('/login', async (req, res) => {
 
 })
 
-// //TODO: ****************************************CARD DATA FETCH ****************************************************//
-
-
-// app.get('/login', (req, res) => {
-//   fs.readFile('login.html', 'utf8', (err, data) => {
-//     if (err) {
-//       console.error('Error reading login.html:', err);
-//       res.status(500).send('Internal Server Error');
-//       return;
-//     }
-
-//     res.send(data);
-//   });
-// });
-
-
-// app.post('/login', async (req, res) => {
-
-//   try {
-//     var user_id = req.body.user_id;
-//     var Modelname=req.body.Modelname;
-//     var Features=req.body.Features;
-//     var Color=req.body.Color;
-//     var Warranty=req.body.Warranty;
-//     var Sell=req.body.Sell;
-//     var Rent=req.body.Rent;
-//     var Price=req.body.Price;
-//     var DateListing=req.body.DateListing;
-//     var Size=[{height:req.body.height,width:req.body.width,length:req.body.length}];
-
-
-
-
-//       const fetchproduct = require('./models.js');
-//       const productdet = await fetchproduct.findOne({ Modelname })
-
-//       console.log(productdet);
-      
-//   } 
-  
-//   catch (e) {
-
-//       res.send("wrong details")
-      
-
-//   }
-
-
-// });
-
-// //  ******************************** Update Documents *******************************************************************//
-
-
-// const UpdateDocument  = async(_id) => {
-
-// try{
-  
-//   const result = await Product.updateOne( {_id},{
-//     $set:{
-//     firstname : "Shark",
-//   }
-// }
-// );
-// console.log(result);
-// }
-// catch(err){console.log(err);}
-// }
-
-// UpdateDocument(_id);
-
-
   /**************** SELL   ************************************************************************************************************** */
 
-    // app.get('/sell', (req, res) => {
-    //     res.send(`
-    //     <form method="POST" action="/sell">
-    //     <label for="model">Model Name:</label>
-    //     <input class="inputstyle" type="text" id="model" name="model_name" required ><br>
-
-    //     <label for="category">Category:</label>
-    //     <select class="inputstyle" id="category" name="category" required>
-    //         <option value="category1">Category 1</option>
-    //         <option value="category2">Category 2</option>
-    //         <option value="category3">Category 3</option>
-    //     </select><br><br>
-
-    //     <label for="condition">Physical Condition:</label>
-    //     <select class="inputstyle" id="condition" name="physical_condition" required>
-    //         <option value="new">New</option>
-    //         <option value="used">Used</option>
-    //         <option value="refurbished">Refurbished</option>
-    //     </select><br><br>
-
-    //     <label for="warranty">Warranty Status:</label>
-    //     <select class="inputstyle" id="warranty" name="warranty" required>
-    //         <option value="underWarranty">Under Warranty</option>
-    //         <option value="outOfWarranty">Out of Warranty</option>
-    //         <option value="noWarranty">No Warranty</option>
-    //     </select><br><br>
-
-    //     <label for="year">Date of Purchase:</label>
-    //     <input class="inputstyle" type="text" id="datepicker" name="date_of_purchase" required><br><br>
-
-    //     <label for="color">Color:</label>
-    //     <input class="inputstyle" type="text" id="color" name="color" required><br><br>
-
-    //     <label for="dimension">Dimensions:</label>
-    //     <input class="inputstyle" type="text" id="dimension" name="dimension" required><br><br>
-
-    //     <label for="quantity">Quantity:</label>
-    //     <input class="inputstyle" type="text" id="quantity" name="quantity" step="1" required><br><br>
-
-    //     <!-- <label for="photos">Photos:</label>
-    //     <input type="file" id="photos" name="photos" required><br><br> -->
-
-    //     <!-- <label for="sellRent">Sell/Rent:</label>
-    //     <input type="radio" id="sell" name="sellRent" value="sell" required>
-    //     <label for="sell">Sell</label>
-    //     <input type="radio" id="rent" name="sellRent" value="rent" required>
-    //     <label for="rent">Rent</label><br><br> -->
-
-    //     <label for="price">Price:</label>
-    //     <input class="inputstyle" type="text" id="price" name="price" required><br><br>
-
-    //     <label for="description">Description:</label>
-    //     <input class="inputstyle" type="text" id="description" name="description" required><br>
-
-    //     <input type="submit" class="btn" value="Submit">
-    // </form>
-    //     `);
-    //   });
 
     const multer = require('multer')
     const path = require('path')
@@ -394,7 +295,7 @@ app.post('/login', async (req, res) => {
 
         try {
           
-            const createProduct = require('./models.js');
+            // const createProduct = require('./models.js');
             createProduct(model_name, category,physical_condition,warranty,date_of_purchase,color,dimension,quantity,price,description,photosurl,sellorrent);
       
           res.send('Signup successful!');
@@ -417,10 +318,8 @@ catch(error){
 
 database();
 
-app.listen(5050, () => {
+app.listen(3000, () => {
 console.log("Server is running at port 5050");
 });
 
-
-
-// 
+}); 
