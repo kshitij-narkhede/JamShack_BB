@@ -28,8 +28,8 @@
                     <input type="search" class="search" placeholder="Search for Products...">
                     <button type="submit">Search</button>
                     <span class="glyphicon glyphicon-filter" style="left:300px"><b>Filter</b></span>
-                    <a  id="loginButton" class="btn btn-secondary btn-lg active " style="left:870px;position: relative;" role="button" data-toggle="modal" data-target="#LoginModal"  aria-pressed="true">Login</a>
-                    <a id="SigninButton" class="btn btn-secondary btn-lg active " style="left:900px;position: relative;" role="button"  aria-pressed="true">Sign-up</a>
+                    <a  id="loginButton" class="btn btn-secondary btn-lg active " style="left:870px;position: relative;" role="button" data-toggle="modal" onclick="login()" data-target="#LoginModal"  aria-pressed="true">Login</a>
+                    <a id="SigninButton" class="btn btn-secondary btn-lg active " style="left:900px;position: relative;" role="button" onclick="sign_up()" aria-pressed="true">Sign-up</a>
                 </form> 
                        
     <!-- =============================== * navbar * ============================================ -->
@@ -91,8 +91,8 @@
                       </div>
                       
                        
-                      <button type" id="switchbuy" name="switch" value=1  onclick="showvalue()">BUY</button>
-                      <button type" id="switchrent" name="switch" value=0  onclick="showvalue1()">RENT</button>
+                      <button type" id="switchbuy" name="switch" value=1  onclick="buy()">BUY</button>
+                      <button type" id="switchrent" name="switch" value=0  onclick="rent()">RENT</button>
                        
                         
                      
@@ -247,81 +247,22 @@
     </script>
 
 <script>
-  // Get a reference to the login button
-  const loginButton = document.getElementById('loginButton');
+ function login(){
+  window.location.replace('http://localhost:8080/login');
+}
 
-  // Add a click event listener to the button
-  loginButton.addEventListener('click', () => {
-    // Make a GET request to the '/login' route
-    fetch('/login')
-      .then(response => response.text())
-      .then(data => {
-        // Replace the current page content with the data from the '/login' route
-        document.documentElement.innerHTML = data;
-      })
-      .catch(error => {
-        console.error('Error fetching login page:', error);
-      });
-  });
+function sign_up(){
+  window.location.replace('http://localhost:8080/sign_up');
+}
+
+function buy(){
+  window.location.replace('http://localhost:8080/buy');
+}
 
 
-
-
-
-  const SigninButton = document.getElementById('SigninButton');
-
-// Add a click event listener to the button
-SigninButton.addEventListener('click', () => {
-  // Make a GET request to the '/login' route
-  fetch('/sign_up')
-    .then(response => response.text())
-    .then(data => {
-      // Replace the current page content with the data from the '/login' route
-      document.documentElement.innerHTML = data;
-    })
-    .catch(error => {
-      console.error('Error fetching Signin page:', error);
-    });
-});
-
-
-
-const switchbuy = document.getElementById('switchbuy');
-
-// Add a click event listener to the button
-switchbuy.addEventListener('click', () => {
-  // Make a GET request to the '/login' route
-  fetch('/buy')
-    .then(response => response.text())
-    .then(data => {
-      // Replace the current page content with the data from the '/login' route
-      document.documentElement.innerHTML = data;
-    })
-    .catch(error => {
-      console.error('Error fetching buy page:', error);
-    });
-});
-
-
-
-const switchrent = document.getElementById('switchrent');
-
-// Add a click event listener to the button
-switchrent.addEventListener('click', () => {
-  // Make a GET request to the '/login' route
-  fetch('/rent')
-    .then(response => response.text())
-    .then(data => {
-      // Replace the current page content with the data from the '/login' route
-      document.documentElement.innerHTML = data;
-    })
-    .catch(error => {
-      console.error('Error fetching Rent page:', error);
-    });
-});
-
-
-
+function rent(){
+  window.location.replace('http://localhost:8080/rent');
+}
 
 
 </script>
