@@ -14,7 +14,56 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public/'));
 
+var Publishable_Key = 'pk_test_51NN9fBSI90304Yamaxa65rmRDkvAmeR4h2kaOOtUeMdrFXpDkg58iAQtAlG2bVTpuXCIFSjjp8wd8i45x8y07BPX003MWhB4CF'
+var Secret_Key = 'sk_test_51NN9fBSI90304YamaLo78Fi6vQS605Edtibzcm3DOVT2bxFoP72jGxlffdpCWUSEsN5dwghtUnZvzxis6pgRdAOz00LAJIH1rJ'
+
+const stripe = require('stripe')(Secret_Key)
+app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs');
+
+app.get('/', function(req, res){
+  res.render('home', {
+     key: Publishable_Key
+  })
+})
+
+app.post('/payment', function(req, res){
+  // Moreover you can take more details from user
+  // like Address, Name, etc from form
+  stripe.customers.create({
+      email: req.body.stripeEmail,
+      source: req.body.stripeToken,
+      name: 'Gourav Hammad',
+      address: {
+          line1: 'TC 9/4 Old MES colony',
+          postal_code: '452331',
+          city: 'Indore',
+          state: 'Madhya Pradesh',
+          country: 'India',
+      }
+  })
+  .then((customer) => {
+
+      return stripe.charges.create({
+          amount: 2500,     // Charging Rs 25
+          description: 'Web Development Product',
+          currency: 'INR',
+          customer: customer.id
+      });
+  })
+  .then((charge) => {
+      res.send("Success")  // If no error occurs
+  })
+  .catch((err) => {
+      res.send(err)       // If some error occurs
+  });
+})
+
+app.listen(5000, function(error){
+  if(error) throw error
+
+
+
 const database = module.exports = () => {
     const connectionParams  = {
       useNewUrlParser :true,
@@ -161,11 +210,13 @@ res.render('rent', {
           createSignup(fname, lname,age,email,password,phone,address,city,zipcode);
     
         res.send('Signup successful!');
+        var u_id = Product.find({"fname":fname},{_id:1}); 
       } catch (error) {
         console.error('Error signing up:', error);
         res.send('Error signing up');
       }
     });
+
     
 /******************* Login ***************************/
 
@@ -421,6 +472,4 @@ app.listen(5050, () => {
 console.log("Server is running at port 5050");
 });
 
-
-
-// 
+}); 
